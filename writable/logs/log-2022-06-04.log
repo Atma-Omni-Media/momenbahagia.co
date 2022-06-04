@@ -160,3 +160,36 @@ INFO - 2022-06-04 05:28:04 --> Controller "App\Controllers\base\Beranda" loaded.
 INFO - 2022-06-04 05:29:03 --> Controller "App\Controllers\base\Beranda" loaded.
 INFO - 2022-06-04 05:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2022-06-04 05:29:09 --> Controller "App\Controllers\base\Order" loaded.
+INFO - 2022-06-04 05:42:42 --> Controller "CodeIgniter\CLI\CommandRunner" loaded.
+INFO - 2022-06-04 05:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:46 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 05:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:53 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 05:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:42:53 --> Controller "App\Controllers\base\Dashboard" loaded.
+CRITICAL - 2022-06-04 05:45:00 --> syntax error, unexpected '<'
+#0 C:\xampp\htdocs\momenbahagia.co\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(NULL)
+#1 C:\xampp\htdocs\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\momenbahagia.co\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\momenbahagia.co\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-04 05:45:00 --> syntax error, unexpected '<'
+#0 C:\xampp\htdocs\momenbahagia.co\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(NULL)
+#1 C:\xampp\htdocs\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\momenbahagia.co\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\momenbahagia.co\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+INFO - 2022-06-04 05:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:45:15 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 05:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:45:27 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 05:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:45:27 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 05:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 05:45:51 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:15:29 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 06:18:32 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 06:18:34 --> Controller "App\Controllers\base\Beranda" loaded.
