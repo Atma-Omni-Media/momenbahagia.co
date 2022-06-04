@@ -63,17 +63,16 @@
     </header>
 
       <section class="fdb-block cover d-flex align-items-center" >
-        <div class="container align-items-end justify-content-center d-flex">
+        <div class="container align-items-end justify-content-left d-flex">
           <div class="row align-items-top text-left">
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-6 col-md-6 col-lg-6">
               <h1 class="judul"><?= SITE_NAME ?></h1>
               <p class="lead subjudul">Buat Undangan Lebih Praktis untuk berbagai kebutuhan momen bahagia kamu</p>
               <p class="mt-4"><a href="<?= base_url() ?>/order" class="btn btn-light btn-pesan">Buat Undangan</a></p>
               <p class="mt-4"><a href="<?= base_url() ?>/tema" class="btn btn-light btn-pesan">Lihat Demo</a></p>
             </div>
-      
-            <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto">
-              <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/home_cover.png?<?= date("Y-m-d"); ?>">
+            <div class="col-12 col-sm-4 col-md-6 col-lg-4">
+              <!-- <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/home_cover.png?<?= date("Y-m-d"); ?>"> -->
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@
             <div class="row align-items-center mt-3">
               <div class="col">
                 <label>Password</label>
-                <input name="password" type="text" class="form-control" placeholder="Password" value="<?php echo $password; ?>" required>
+                <input name="password" type="password" class="form-control" placeholder="Password" value="<?php echo $password; ?>" required>
               </div>
             </div>
             <div class="row align-items-center mt-3">
