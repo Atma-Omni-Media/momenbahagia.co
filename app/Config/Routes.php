@@ -33,7 +33,7 @@ if(isset($_SERVER['HTTP_HOST'])){
 	$routes->add('admin/pembayaran', 'Admin::pembayaran');
 	$routes->add('admin/profil', 'Admin::profil');
 	$routes->add('admin/setting', 'Admin::setting');
-	$routes->get('admin/login', 'Admin::login');
+	$routes->get('administrator/login', 'Admin::login');
 	$routes->add('admin/edit_pengguna', 'Admin::edit_pengguna');
 	$routes->add('admin/pengguna', 'Admin::pengguna');
 

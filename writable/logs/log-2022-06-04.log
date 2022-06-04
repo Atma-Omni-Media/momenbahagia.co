@@ -193,3 +193,41 @@ INFO - 2022-06-04 05:45:51 --> Controller "App\Controllers\admin\Admin" loaded.
 INFO - 2022-06-04 06:15:29 --> Controller "App\Controllers\base\Beranda" loaded.
 INFO - 2022-06-04 06:18:32 --> Controller "App\Controllers\base\Beranda" loaded.
 INFO - 2022-06-04 06:18:34 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 06:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:44 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:44 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:48 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:48 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 06:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:21:54 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 06:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:23:41 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 06:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:25:26 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 06:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:25:26 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 06:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:25:44 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:25:48 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 06:26:37 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 06:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:21 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:22 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:23 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:26 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:26 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:30 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 06:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 06:27:31 --> Controller "App\Controllers\admin\Admin" loaded.

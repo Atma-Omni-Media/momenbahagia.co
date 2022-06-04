@@ -29,7 +29,7 @@
                                         </span>
                                     </div>
                                 <?php endif ?>
-                                <form method="post" action="<?php echo base_url('administrator/do_auth'); ?>" class="user">
+                                <form method="post" action="<?php echo base_url('do_auth'); ?>" class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" name="email">
                                     </div>
