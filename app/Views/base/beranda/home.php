@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html Content-Language="ID" lang="id" xml:lang="id">
+  
   <head>
     <title><?= SITE_NAME ?> - Digital Invitation</title>
     <link rel="icon" href="<?php echo base_url() ?>/assets/base/img/favicon.png?<?= date("Y-m-d"); ?>">
