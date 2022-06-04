@@ -247,3 +247,131 @@ INFO - 2022-06-04 06:36:55 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2022-06-04 06:36:55 --> Controller "App\Controllers\admin\Admin" loaded.
 INFO - 2022-06-04 06:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2022-06-04 06:36:58 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 09:24:26 --> Controller "App\Controllers\base\Beranda" loaded.
+CRITICAL - 2022-06-04 09:24:30 --> No connection could be made because the target machine actively refused it.
+
+#0 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\momenbahagia.co\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\momenbahagia.co\app\Models\base\BerandaModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\momenbahagia.co\app\Controllers\base\Beranda.php(26): App\Models\base\BerandaModel->get_all_themes()
+#5 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(910): App\Controllers\base\Beranda->index()
+#6 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\base\Beranda))
+#7 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\momenbahagia.co\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2022-06-04 09:32:07 --> Controller "App\Controllers\base\Beranda" loaded.
+CRITICAL - 2022-06-04 09:32:07 --> Unknown database 'undangan'
+#0 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\momenbahagia.co\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\momenbahagia.co\app\Models\base\BerandaModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\momenbahagia.co\app\Controllers\base\Beranda.php(26): App\Models\base\BerandaModel->get_all_themes()
+#5 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(910): App\Controllers\base\Beranda->index()
+#6 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\base\Beranda))
+#7 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\momenbahagia.co\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2022-06-04 10:02:08 --> Controller "App\Controllers\base\Beranda" loaded.
+CRITICAL - 2022-06-04 10:02:08 --> Unknown database 'undangan'
+#0 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\momenbahagia.co\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\momenbahagia.co\app\Models\base\BerandaModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\momenbahagia.co\app\Controllers\base\Beranda.php(26): App\Models\base\BerandaModel->get_all_themes()
+#5 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(910): App\Controllers\base\Beranda->index()
+#6 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\base\Beranda))
+#7 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\momenbahagia.co\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2022-06-04 10:05:40 --> Controller "App\Controllers\base\Beranda" loaded.
+CRITICAL - 2022-06-04 10:05:40 --> Unknown database 'lakonlab_momenbahagiaevent'
+#0 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\momenbahagia.co\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\momenbahagia.co\app\Models\base\BerandaModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\momenbahagia.co\app\Controllers\base\Beranda.php(26): App\Models\base\BerandaModel->get_all_themes()
+#5 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(910): App\Controllers\base\Beranda->index()
+#6 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\base\Beranda))
+#7 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\momenbahagia.co\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2022-06-04 10:05:42 --> Controller "App\Controllers\base\Beranda" loaded.
+CRITICAL - 2022-06-04 10:05:42 --> Unknown database 'lakonlab_momenbahagiaevent'
+#0 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\momenbahagia.co\system\Database\BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\momenbahagia.co\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\momenbahagia.co\app\Models\base\BerandaModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\momenbahagia.co\app\Controllers\base\Beranda.php(26): App\Models\base\BerandaModel->get_all_themes()
+#5 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(910): App\Controllers\base\Beranda->index()
+#6 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\base\Beranda))
+#7 C:\laragon\www\momenbahagia.co\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\momenbahagia.co\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2022-06-04 10:06:01 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:06 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 10:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:15 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 10:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:15 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 10:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:24 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:28 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:06:28 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:12:44 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:12:44 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:21:15 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:21:16 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:21:17 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:22:22 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:22:22 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:22:22 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:12 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:13 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:13 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:16 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:26 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:29 --> Controller "App\Controllers\admin\Admin" loaded.
+INFO - 2022-06-04 10:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-04 10:33:29 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-04 10:33:33 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:34 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:56 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:33:59 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:09 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:27 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:27 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:27 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:50 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:57 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:57 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:34:57 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:36:41 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:36:45 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:36:51 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:37:40 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:37:40 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:37:40 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:38:15 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:38:16 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:38:16 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:38:16 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:39:51 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:39:54 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:39:59 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:40:11 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:40:11 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-04 10:40:11 --> Controller "App\Controllers\base\Beranda" loaded.
