@@ -38,7 +38,7 @@ if(isset($_SERVER['HTTP_HOST'])){
 	$routes->add('admin/pengguna', 'Admin::pengguna');
 
 	$routes->add('logout', 'Admin::do_unauth');
-	$routes->post('do_auth', 'Admin::do_auth');
+	$routes->post('administrator/do_auth', 'Admin::do_auth');
 	$routes->post('admin/update_setting', 'Admin::do_update_setting');
 	$routes->post('admin/update_admin', 'Admin::do_update_admin');
 	$routes->post('admin/konfirmasi', 'Admin::do_konfirmasi');
