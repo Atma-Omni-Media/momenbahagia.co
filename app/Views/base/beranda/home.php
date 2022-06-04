@@ -10,8 +10,8 @@
     <meta name="description" content="Undangan digital berupa website untuk pernikahanmu. Lebih praktis, keren dan kekinian.">
     <meta name="keywords" content="Undangan digital, Website pernikahan, Undangan kekinian, Web undangan kren">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#005CAA" />
-    <meta name="author" content="MC Project">
+    <meta name="theme-color" content="#EF9020" />
+    <meta name="author" content="Trisna Kurniawan">
 
     <!-- Required CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/base/css/bootstrap.min.css?SIDOINIKAHV2" >
@@ -73,7 +73,7 @@
             </div>
       
             <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto">
-              <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/favicon.png?<?= date("Y-m-d"); ?>">
+              <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/home_cover.png?<?= date("Y-m-d"); ?>">
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
         </div>
       </section>
 
-      <section class="fdb-block" style="background-image: linear-gradient(to right, #005CAA 0%, #00c6f9 100%) !important" id="harga">
+      <section class="fdb-block" style="background-image: linear-gradient(to right, #d39e00 0%, #ffa707 100%) !important;" id="harga">
         <div class="container">
           <div class="row text-center">
             <div class="col">
@@ -252,7 +252,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -275,7 +275,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -298,7 +298,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -327,7 +327,7 @@
           </div>
             <div class="row text-center">
             <div class="col">
-                <p class="text-footer" style="color:#fff;">&#169;2021 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                <p class="text-footer" style="color:#fff;">&#169;2022 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://lakonlab" rel="dofollow" target="_blank">LakonLab</a> - <a href="https://lakonlab.com" rel="dofollow" target="_blank">AtmaOmniMedia</a>.</p>
             </div>
             </div>
         </div>

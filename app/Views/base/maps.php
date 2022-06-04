@@ -11,7 +11,7 @@
     <meta name="keywords" content="Undangan digital, Website pernikahan, Undangan kekinian, Web undangan kren">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#6c5ce7" />
-    <meta name="author" content="MC Project">
+    <meta name="author" content="LakonLab">
 
     <!-- Required CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/base/css/bootstrap.min.css?SIDOINIKAHV2" >
@@ -80,7 +80,7 @@
           </div>
             <div class="row text-center">
             <div class="col">
-                <p class="text-footer" style="color:#fff;">&#169;2021 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                <p class="text-footer" style="color:#fff;">&#169;2021 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="" rel="dofollow" target="_blank">LakonLab</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">AtmaOmniMedia</a>.</p>
             </div>
             </div>
         </div>

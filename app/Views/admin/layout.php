@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Undangan digital berupa website untuk pernikahanmu. Lebih praktis, keren dan kekinian.">
-    <meta name="author" content="MC Project">
+    <meta name="author" content="LakonLab">
     <link href="<?= base_url('assets/base'); ?>/img/favicon.png" rel="icon">
     <title><?= SITE_NAME; ?> - <?= $title; ?></title>
     <link href="<?= base_url('assets/admin/'); ?>/vendor/fontawesome-free/css/all.min.css?SIDOINIKAHV2" rel="stylesheet" type="text/css">
@@ -105,7 +105,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <p class="text-footer">&#169;2021 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                    <p class="text-footer">&#169;2022 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://lakonlab.com" rel="dofollow" target="_blank">Lakonlab</a> - <a href="wwww.lakonlab.com" rel="dofollow" target="_blank">AtmaOmniMedia</a>.</p>
                 </div>
             </div>
         </footer>
