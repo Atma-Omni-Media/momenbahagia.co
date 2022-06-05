@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html Content-Language="ID" lang="id" xml:lang="id">
+  
   <head>
     <title><?= SITE_NAME ?> - Digital Invitation</title>
     <link rel="icon" href="<?php echo base_url() ?>/assets/base/img/favicon.png?<?= date("Y-m-d"); ?>">
@@ -10,8 +11,8 @@
     <meta name="description" content="Undangan digital berupa website untuk pernikahanmu. Lebih praktis, keren dan kekinian.">
     <meta name="keywords" content="Undangan digital, Website pernikahan, Undangan kekinian, Web undangan kren">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#005CAA" />
-    <meta name="author" content="MC Project">
+    <meta name="theme-color" content="#EF9020" />
+    <meta name="author" content="Trisna Kurniawan">
 
     <!-- Required CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/base/css/bootstrap.min.css?SIDOINIKAHV2" >
@@ -63,17 +64,16 @@
     </header>
 
       <section class="fdb-block cover d-flex align-items-center" >
-        <div class="container align-items-end justify-content-center d-flex">
+        <div class="container align-items-end justify-content-left d-flex">
           <div class="row align-items-top text-left">
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-6 col-md-6 col-lg-6">
               <h1 class="judul"><?= SITE_NAME ?></h1>
-              <p class="lead subjudul">Undangan pernikahan lebih hemat, praktis, dan kekinian dengan url undangan yang disebar otomatis untuk memberikan kesan terbaik.</p>
+              <p class="lead subjudul">Buat Undangan Lebih Praktis untuk berbagai kebutuhan momen bahagia kamu</p>
               <p class="mt-4"><a href="<?= base_url() ?>/order" class="btn btn-light btn-pesan">Buat Undangan</a></p>
               <p class="mt-4"><a href="<?= base_url() ?>/tema" class="btn btn-light btn-pesan">Lihat Demo</a></p>
             </div>
-      
-            <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto">
-              <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/favicon.png?<?= date("Y-m-d"); ?>">
+            <div class="col-12 col-sm-4 col-md-6 col-lg-4">
+              <!-- <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/base/img/home_cover.png?<?= date("Y-m-d"); ?>"> -->
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
         </div>
       </section>
 
-      <section class="fdb-block" style="background-image: linear-gradient(to right, #005CAA 0%, #00c6f9 100%) !important" id="harga">
+      <section class="fdb-block" style="background-image: linear-gradient(to right, #d39e00 0%, #ffa707 100%) !important;" id="harga">
         <div class="container">
           <div class="row text-center">
             <div class="col">
@@ -252,7 +252,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -275,7 +275,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -298,7 +298,7 @@
                   </div>
                   <div class="col-8 ml-auto">
                     <p>
-                      <strong>MC Project</strong><br>
+                      <strong>LakonLab</strong><br>
                       <em>Co-founder at Company</em>
                     </p>
                   </div>
@@ -327,7 +327,7 @@
           </div>
             <div class="row text-center">
             <div class="col">
-                <p class="text-footer" style="color:#fff;">&#169;2021 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                <p class="text-footer" style="color:#fff;">&#169;2022 <a href="<?php echo base_url() ?>" rel="dofollow" target="_blank"><?= SITE_NAME ?></a> - <a href="https://lakonlab" rel="dofollow" target="_blank">LakonLab</a> - <a href="https://lakonlab.com" rel="dofollow" target="_blank">AtmaOmniMedia</a>.</p>
             </div>
             </div>
         </div>

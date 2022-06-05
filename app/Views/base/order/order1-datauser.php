@@ -12,11 +12,12 @@
 
             <form action="<?php echo base_url('order/2') ?>" method="post">
             <div class="row align-items-center">
-              <div class="col mt-4">
+              <div class="col md-4">
                 <label>Nama Domain / URL Undangan</label>
                 <label style="bottom: -12.3px;position: inherit;padding-left: 20px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -1.2rem;"><?= base_url().'/undangan' ?>/</label>
-                <input name="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 180px;" value="<?php echo $domain; ?>"  onkeyup="nospaces(this)" required>
+                <input name="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 320px;" value="<?php echo $domain; ?>"  onkeyup="nospaces(this)" required>
               </div>
+              
             </div>
             <div class="row align-items-center mt-3"> 
               <div class="col">
@@ -27,7 +28,7 @@
             <div class="row align-items-center mt-3">
               <div class="col">
                 <label>Password</label>
-                <input name="password" type="text" class="form-control" placeholder="Password" value="<?php echo $password; ?>" required>
+                <input name="password" type="password" class="form-control" placeholder="Password" value="<?php echo $password; ?>" required>
               </div>
             </div>
             <div class="row align-items-center mt-3">

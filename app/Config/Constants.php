@@ -77,7 +77,7 @@ defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-define('SITE_NAME', 'Si Doi Nikah'); ///NAMA WEBSITE
+define('SITE_NAME', 'MomenBahagia.Co'); ///NAMA WEBSITE
 
 // =========== production mode ============
 // //LINK DOMAIN WITH URL
