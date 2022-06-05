@@ -56,9 +56,9 @@
         <div class="container">
         <div class="col-12 text-lg-left">
             <p class="lead footer-social">
-              <a href="https://twitter.com/mycodingxd" class="mx-2"><i class="lni-twitter-filled" aria-hidden="true"></i></a>
-              <a href="https://facebook.com/mycodingxd" class="mx-2"><i class="lni-facebook-filled" aria-hidden="true"></i></a>
-              <a href="https://instagram.com/mycodingxd" class="mx-2"><i class="lni-instagram-filled" aria-hidden="true"></i></a>
+              <!-- <a href="https://twitter.com/mycodingxd" class="mx-2"><i class="lni-twitter-filled" aria-hidden="true"></i></a> -->
+              <a href="https://www.facebook.com/momenbahagia" class="mx-2"><i class="lni-facebook-filled" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/momenbahagia/" class="mx-2"><i class="lni-instagram-filled" aria-hidden="true"></i></a>
             </p>
           </div>
             <div class="row text-center">

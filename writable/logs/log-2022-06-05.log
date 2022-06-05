@@ -3,3 +3,11 @@ INFO - 2022-06-05 00:01:16 --> Controller "App\Controllers\admin\Admin" loaded.
 INFO - 2022-06-05 00:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2022-06-05 00:01:26 --> Controller "App\Controllers\base\Beranda" loaded.
 INFO - 2022-06-05 00:01:26 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-05 07:41:57 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-05 07:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-05 07:42:04 --> Controller "App\Controllers\base\Dashboard" loaded.
+INFO - 2022-06-05 07:42:10 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-05 07:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-06-05 07:42:13 --> Controller "App\Controllers\base\Order" loaded.
+INFO - 2022-06-05 07:42:29 --> Controller "App\Controllers\base\Beranda" loaded.
+INFO - 2022-06-05 07:42:40 --> Controller "App\Controllers\base\Beranda" loaded.
