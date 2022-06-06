@@ -7,6 +7,7 @@
         </div>
     </div> 
 
+    <form method="post" action="<?= base_url('admin/pelanggan/save'); ?>">
     <div class="row mb-3">
 
         <!-- ========== MEMPELAI =========== -->
@@ -16,6 +17,49 @@
             $fotobride = "/assets/users/".$kunci."/bride.png";
             $fotosampul = "/assets/users/".$kunci."/kita.png";
         ?>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 mb-4">
+              <div class="card mb-4">
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 font-weight-bold text-primary">Data Mempelai Pria</h6>
+                  </div>
+                  <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col md-6">
+                          <label>Nama Domain / URL Undangan</label>
+                          <label style="bottom: -12.3px;position: inherit;padding-left: 20px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -1.2rem;"><?= base_url().'/undangan' ?>/</label>
+                          <input name="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 350px;" value="<?php echo $domain; ?>"  onkeyup="nospaces(this)" required>
+                        </div>
+                        
+                      </div>
+                      <div class="row align-items-center mt-3"> 
+                        <div class="col">
+                          <label>Email</label>
+                          <input name="email" type="email" class="form-control" placeholder="Email" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3"> 
+                        <div class="col">
+                          <label>Username</label>
+                          <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label>Password</label>
+                          <input name="password" type="password" class="form-control" placeholder="Password" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label>Nomer HP / WhatsApp</label>
+                          <input name="hp" type="number" class="form-control" placeholder="0" value="<?php echo $hp; ?>">
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-xl-6 col-lg-6 mb-4">
               <div class="card mb-4">
@@ -43,22 +87,22 @@
                       <hr>
                       <div class="col mt-2">
                           <label>Nama Lengkap</label>
-                          <input id="nama_lengkap_pria" type="text" class="form-control" placeholder="Contoh : Jack Dawson S.Kom" value="" required>
+                          <input name="nama_lengkap_pria" id="nama_lengkap_pria" type="text" class="form-control" placeholder="Contoh : Jack Dawson S.Kom" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Nama Panggilan</label>
-                          <input id="nama_panggilan_pria" type="text" class="form-control" placeholder="Contoh : Jack" value="" required>
+                          <input name="nama_panggilan_pria" id="nama_panggilan_pria" type="text" class="form-control" placeholder="Contoh : Jack" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Nama Ayah</label>
-                          <input id="nama_ayah_pria" type="text" class="form-control" placeholder="Nama Ayah" value="" required>
+                          <input name="nama_ayah_pria" id="nama_ayah_pria" type="text" class="form-control" placeholder="Nama Ayah" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Nama Ibu</label>
-                          <input id="nama_ibu_pria" type="text" class="form-control" placeholder="Nama Ibu" value="" required>
+                          <input name="nama_ibu_pria" id="nama_ibu_pria" type="text" class="form-control" placeholder="Nama Ibu" value="" >
                       </div>
                   </div>
               </div>
@@ -90,21 +134,21 @@
                       <hr>
                       <div class="col mt-2">
                           <label>Nama Lengkap</label>
-                          <input id="nama_lengkap_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah Az Zahra" value="" required>
+                          <input name="nama_lengkap_wanita" id="nama_lengkap_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah Az Zahra" value="" >
                       </div>
                       <div class="col mt-2">
                           <label>Nama Panggilan</label>
-                          <input id="nama_panggilan_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah" value="" required>
+                          <input name="nama_panggilan_wanita" id="nama_panggilan_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Nama Ayah</label>
-                          <input id="nama_ayah_wanita" type="text" class="form-control" placeholder="Nama Ayah" value="" required>
+                          <input name="nama_ayah_wanita" id="nama_ayah_wanita" type="text" class="form-control" placeholder="Nama Ayah" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Nama Ibu</label>
-                          <input id="nama_ibu_wanita" type="text" class="form-control" placeholder="Nama Ibu" value="" required>
+                          <input name="nama_ibu_wanita" id="nama_ibu_wanita" type="text" class="form-control" placeholder="Nama Ibu" value="" >
                       </div>
                   </div>
               </div>
@@ -149,18 +193,18 @@
                       <!-- CONTENT DISINI -->
                       <div class="col mt-2">
                           <label>Tanggal </label>
-                          <input type="text" class="form-control" id="datepicker" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="Jumat, 17 Januari 2020" required>
+                          <input type="text" class="form-control" id="datepicker" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="Jumat, 17 Januari 2020" >
                           <input type="hidden" id="tanggal_akad" value="">
                       </div>
 
                       <div class="col mt-2">
                           <label>Waktu / Jam</label>
-                          <input id="waktu_akad" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" required>
+                          <input id="waktu_akad" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Tempat / Lokasi</label>
-                          <input id="lokasi_akad" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" required>
+                          <input id="lokasi_akad" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
                       </div>
 
                       <div class="col mt-2">
@@ -180,18 +224,18 @@
                       <!-- CONTENT DISINI -->
                       <div class="col mt-2">
                           <label>Tanggal </label>
-                          <input type="text" class="form-control" id="datepicker2" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="<?= $acara[0]->tanggal_resepsi ?>" required> 
+                          <input type="text" class="form-control" id="datepicker2" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="<?= $acara[0]->tanggal_resepsi ?>" > 
                           <input type="hidden" id="tanggal_resepsi" value="">
                       </div>
 
                       <div class="col mt-2">
                           <label>Waktu / Jam</label>
-                          <input id="waktu_resepsi" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" required>
+                          <input id="waktu_resepsi" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Tempat / Lokasi</label>
-                          <input id="lokasi_resepsi" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" required>
+                          <input id="lokasi_resepsi" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
                       </div>
 
                       <div class="col mt-2">
@@ -209,7 +253,7 @@
                   </div>
                   <div class="card-body">
                       <label>Google Maps Link</label>
-                      <textarea id="maps" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita" required><?= $data[0]->maps ?></textarea>
+                      <textarea id="maps" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita" ><?= $data[0]->maps ?></textarea>
                       <div class="mt-1">
                       <label class="form-check-label ">
                         <a href="<?= SITE_UTAMA ?>/maps" style="margin-top: 105px;color: #2c3e50;position: relative;top:3px;color:#17a2b8;"><i class="lni-question-circle" style="color:#17a2b8;"></i>&nbsp Cara Menambahkan Maps</a>
@@ -227,7 +271,7 @@
                   </div>
                   <div class="card-body">
                       <label>Youtube Link</label>
-                      <textarea id="video" type="text" class="form-control" placeholder="Contoh : https://youtu.be/zlKzyYnhu-s" required><?= $data[0]->video ?></textarea>
+                      <textarea id="video" type="text" class="form-control" placeholder="Contoh : https://youtu.be/zlKzyYnhu-s" ><?= $data[0]->video ?></textarea>
                       <div class="mt-1">
                       <label class="form-check-label ">
                         <a href="<?= SITE_UTAMA ?>/youtube" style="margin-top: 105px;color: #2c3e50;position: relative;top:3px;color:#17a2b8;"><i class="lni-question-circle" style="color:#17a2b8;"></i>&nbsp Cara Menambahkan Video</a>
@@ -266,21 +310,21 @@
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <label>Tanggal</label>
-                                        <input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 20 Februari 2020" value="" required>
+                                        <input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 20 Februari 2020" value="" >
                                     </div>
                                 </div>
 
                                 <div class="row align-items-center mt-3">
                                     <div class="col">
                                         <label>Judul</label>
-                                        <input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Ta'aruf" value="" required>
+                                        <input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Ta'aruf" value="" >
                                     </div>
                                 </div>
 
                                 <div class="row align-items-center mt-3">
                                     <div class="col">
                                         <label>Isi Cerita</label>
-                                        <textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" required><?= $cerita[$i]->isi_cerita ?></textarea>
+                                        <textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" ><?= $cerita[$i]->isi_cerita ?></textarea>
                                     </div>
                                 </div>
                             </div>  
@@ -378,7 +422,7 @@
                     <div class="form-group">
                     <label>Nama Domain / URL Undangan</label>
                     <label style="bottom: -12.3px;position: inherit;padding-left: 15px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -2.1rem;"><?= base_url().'undangan' ?>.com/</label>
-                    <input id="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 200px;" value=""  onkeyup="nospaces(this)" required>
+                    <input id="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 200px;" value=""  onkeyup="nospaces(this)" >
                     </div>
 
           
@@ -462,32 +506,33 @@
 
                     <div class="form-group">
                         <label>Username</label>
-                        <input id="username" type="text" class="form-control" placeholder="Contoh : reydinda" value="" required>
+                        <input id="username" type="text" class="form-control" placeholder="Contoh : reydinda" value="" >
                     </div>
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input id="password" type="password" class="form-control" placeholder="********" value="" required>
+                        <input id="password" type="password" class="form-control" placeholder="********" value="" >
                     </div>
 
                     <div class="form-group">
                         <label>Email</label>
-                        <input id="email" type="email" class="form-control" placeholder="Contoh : reydinda" value="" required>
+                        <input id="email" type="email" class="form-control" placeholder="Contoh : reydinda" value="" >
                     </div>
 
                     <div class="form-group">
                         <label>Nomor Hp</label>
-                        <input id="hp" type="number" class="form-control" placeholder="Contoh : 081234567890" value="" required>
+                        <input id="hp" type="number" class="form-control" placeholder="Contoh : 081234567890" value="" >
                     </div>
 
                 </div>
             </div>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalUser">Simpan</button>
+            <button class="btn btn-primary">Simpan</button>
         </div>
 
     </div>
     <!--Row-->
 </div>
+</form>
 
 
 <!-- Modal -->
@@ -722,7 +767,7 @@
        i--;
 
        if(i == 0){
-        $("..form-control").prop('required',true);
+        $("..form-control").prop('',true);
        }
 
      });  
@@ -731,8 +776,8 @@
 
       i++;  
 
-      $('#konten-cerita').append('<div id="cerita'+i+'"><div class="row align-items-center mt-3"><div class="col-auto"><a style="color: #2c3e50;margin-bottom:0px;font-size: 20px;font-weight: 600;display: flex;">#'+i+'</a></div><div class="col"><a id="'+i+'" class="btn btn-sm btn_remove" style="background-color: #dc3545;padding: 5px;font-size: 12px;border-radius: 5px;">Hapus</a></div></div><div class="row align-items-center"><div class="col"><label>Tanggal</label><input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 14 Januari 2020 " required></div></div><div class="row align-items-center mt-3"><div class="col"><label>Judul</label><input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Pertama Bertemu" required></div></div><div class="row align-items-center mt-3"><div class="col"><label>Isi Cerita</label><textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" required></textarea></div></div></div>');  
-        $(".form-control").prop('required',false);
+      $('#konten-cerita').append('<div id="cerita'+i+'"><div class="row align-items-center mt-3"><div class="col-auto"><a style="color: #2c3e50;margin-bottom:0px;font-size: 20px;font-weight: 600;display: flex;">#'+i+'</a></div><div class="col"><a id="'+i+'" class="btn btn-sm btn_remove" style="background-color: #dc3545;padding: 5px;font-size: 12px;border-radius: 5px;">Hapus</a></div></div><div class="row align-items-center"><div class="col"><label>Tanggal</label><input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 14 Januari 2020 " ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Judul</label><input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Pertama Bertemu" ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Isi Cerita</label><textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" ></textarea></div></div></div>');  
+        $(".form-control").prop('',false);
     });
 
 

@@ -5,6 +5,7 @@ use App\Models\admin\AdminModel;
 
 class Admin extends Controller
 {
+    protected $order,$uri,$request,$db;
     public function __construct() {
         //mengisi variable global dengan data
         $this->session = session();
@@ -13,6 +14,11 @@ class Admin extends Controller
         $this->uri = $this->request->uri; //class request digunakan untuk request uri/url
         // $this->session->set('uname_admin','mantab');
         // $this->session->set('id_admin','1');
+        	//load service bawaan ci
+		$this->request = \Config\Services::request(); 
+		$this->session = \Config\Services::session();  //untuk membaca session 
+		$this->db  = \Config\Database::connect(); //untuk melakukan CRUD ke databse
+		$this->uri = $this->request->uri;
     }
 
     public function index()
@@ -488,6 +494,62 @@ class Admin extends Controller
         $data['order'] = $this->AdminModel->get_order_by_id_user();
         return view('admin/layout', $data);
 
+    }
+
+    public function save_pengguna(){
+        $email = $this->request->getPost('email');
+		$domain = $this->request->getPost('domain');
+        $password = $this->request->getPost('password');
+		//users
+
+	 	$hp = $this->request->getPost('hp');
+	 	$username = $email;
+	 	$password = $password;
+	 	$dataUser = [
+	 		'email' => $email,
+	 		'hp' => $hp,
+	 		'username' => $username,
+	 		'password' => md5($password),
+	 		'id_unik' => '',
+	 	];
+		
+		//insert dulu data user nya nanti diambil idnya 
+	 	$saveUser = $this->AdminModel->save_user($dataUser);
+        $id_user = $this->db->insertID(); //ambil id 
+        
+        $today = date('ym');
+        $kode = $today.$id_user.rand(10,99); //dijadikan invoice sekaligus kode unik user. Formatnya ( 2 digit tahun, 2 digit bulan, id user, random 2 angka)
+        $this->AdminModel->update_kode($kode,$id_user);
+        	//mempelai
+	 	$nama_lengkap_pria = $this->request->getPost('nama_lengkap_pria');
+	 	$nama_panggilan_pria = $this->request->getPost('nama_panggilan_pria');
+	 	$nama_ibu_pria = $this->request->getPost('nama_ibu_pria');
+	 	$nama_ayah_pria = $this->request->getPost('nama_ayah_pria');
+
+	 	$nama_lengkap_wanita = $this->request->getPost('nama_lengkap_wanita');
+	 	$nama_panggilan_wanita = $this->request->getPost('nama_panggilan_wanita');
+	 	$nama_ibu_wanita = $this->request->getPost('nama_ibu_wanita');
+	 	$nama_ayah_wanita = $this->request->getPost('nama_ayah_wanita');
+         
+	 	$dataMempelai = [
+	 		'id_user' => $id_user,
+	 		'nama_pria' => $nama_lengkap_pria,
+	 		'nama_panggilan_pria' => $nama_panggilan_pria,
+	 		'nama_ibu_pria' => $nama_ibu_pria,
+	 		'nama_ayah_pria' => $nama_ayah_pria,
+	 		'nama_wanita' => $nama_lengkap_wanita,
+	 		'nama_panggilan_wanita' => $nama_panggilan_wanita,
+	 		'nama_ibu_wanita' => $nama_ibu_wanita,
+	 		'nama_ayah_wanita' => $nama_ayah_wanita,
+	 	];
+         
+         $saveMempelai = $this->AdminModel->save_mempelai($dataMempelai);
+         
+         if($saveUser){
+            echo 'sukses';
+        }else{
+            echo 'gagal';
+        }
     }
     
 }

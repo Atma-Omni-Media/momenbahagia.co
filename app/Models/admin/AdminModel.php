@@ -367,4 +367,23 @@ class AdminModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    public function save_user($data){
+
+    	return $this->users->insert($data);
+
+    }
+
+    public function update_kode($kode,$id){
+        $builder = $this->db->table('users');
+        $builder->set('id_unik',$kode);
+        $builder->where('id',$id);
+        return $builder->update();
+    }
+
+    public function save_mempelai($data){
+
+    	return $this->mempelai->insert($data);
+
+    }
 }
