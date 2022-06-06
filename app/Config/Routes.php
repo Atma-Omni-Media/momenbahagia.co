@@ -35,6 +35,7 @@ if(isset($_SERVER['HTTP_HOST'])){
 	$routes->add('admin/setting', 'Admin::setting');
 	$routes->get('administrator/login', 'Admin::login');
 	$routes->add('admin/edit_pengguna', 'Admin::edit_pengguna');
+	$routes->add('admin/add_pengguna', 'Admin::add_pengguna');
 	$routes->add('admin/pengguna', 'Admin::pengguna');
 
 	$routes->add('logout', 'Admin::do_unauth');

@@ -468,5 +468,26 @@ class Admin extends Controller
             }   
         }
     }
+
+    public function add_pengguna(){
+
+        if($this->request->getMethod() == 'post'){
+            $id = $this->request->getPost('id');
+            $this->session->set('id_usernya', $id);
+        }
+        $data['title'] = 'Add Pengguna';
+        $data['view'] = 'admin/add_pengguna';
+
+        $data['user'] = $this->AdminModel->get_user_by_id_user();
+        $data['fitur'] = $this->AdminModel->get_fitur_by_id_user();
+        $data['acara'] = $this->AdminModel->get_acara_by_id_user();
+        $data['mempelai'] = $this->AdminModel->get_mempelai_by_id_user();
+        $data['cerita'] = $this->AdminModel->get_cerita_by_id_user(); 
+        $data['album'] = $this->AdminModel->get_album_by_id_user();
+        $data['data'] = $this->AdminModel->get_data_by_id_user();
+        $data['order'] = $this->AdminModel->get_order_by_id_user();
+        return view('admin/layout', $data);
+
+    }
     
 }
