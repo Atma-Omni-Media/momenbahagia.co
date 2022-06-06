@@ -60,9 +60,6 @@
                           <label>Nama Ibu</label>
                           <input id="nama_ibu_pria" type="text" class="form-control" placeholder="Nama Ibu" value="" required>
                       </div>
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalPria">Simpan</button>
-                      </div>
                   </div>
               </div>
           </div>
@@ -95,7 +92,6 @@
                           <label>Nama Lengkap</label>
                           <input id="nama_lengkap_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah Az Zahra" value="" required>
                       </div>
-
                       <div class="col mt-2">
                           <label>Nama Panggilan</label>
                           <input id="nama_panggilan_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah" value="" required>
@@ -109,10 +105,6 @@
                       <div class="col mt-2">
                           <label>Nama Ibu</label>
                           <input id="nama_ibu_wanita" type="text" class="form-control" placeholder="Nama Ibu" value="" required>
-                      </div>
-
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalWanita">Simpan</button>
                       </div>
                   </div>
               </div>
@@ -175,10 +167,6 @@
                           <label>Alamat</label>
                           <textarea id="alamat_akad" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_akad ?></textarea>
                       </div>
-
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalAkad">Simpan</button>
-                      </div>
                   </div>
               </div>
           </div>
@@ -210,10 +198,6 @@
                           <label>Alamat</label>
                           <textarea id="alamat_resepsi" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_resepsi ?></textarea>
                       </div>
-
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalResepsi">Simpan</button>
-                      </div>
                   </div>
               </div>
           </div>
@@ -230,9 +214,6 @@
                       <label class="form-check-label ">
                         <a href="<?= SITE_UTAMA ?>/maps" style="margin-top: 105px;color: #2c3e50;position: relative;top:3px;color:#17a2b8;"><i class="lni-question-circle" style="color:#17a2b8;"></i>&nbsp Cara Menambahkan Maps</a>
                       </label>
-                      </div>
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalMaps">Simpan</button>
                       </div>
                   </div>
               </div>
@@ -251,9 +232,6 @@
                       <label class="form-check-label ">
                         <a href="<?= SITE_UTAMA ?>/youtube" style="margin-top: 105px;color: #2c3e50;position: relative;top:3px;color:#17a2b8;"><i class="lni-question-circle" style="color:#17a2b8;"></i>&nbsp Cara Menambahkan Video</a>
                       </label>
-                      </div>
-                      <div class="col mt-3">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#modalVideo">Simpan</button>
                       </div>
                   </div>
               </div>
@@ -317,10 +295,6 @@
                         <div class="col text-center">
                             <a id="addCerita" class="btn btn-primary btn-order btn-order-secondary btn-block" style="color:#fff">Tambah Cerita</a>
                         </div>
-                    </div>
-
-                    <div class="col mt-3">
-                        <button class="btn btn-primary" type="submit">Simpan</button>
                     </div>
                     </form>        
                 </div>
@@ -407,7 +381,7 @@
                     <input id="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 200px;" value=""  onkeyup="nospaces(this)" required>
                     </div>
 
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalDomain">Simpan</button>
+          
                 </div>
               </div>
         </div>
@@ -428,7 +402,6 @@
                       </div>
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Simpan</button>
                 </div>
               </div>
               </form>
@@ -475,7 +448,6 @@
                         <label class="custom-control-label" for="setLokasi" >Halaman Lokasi</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalFitur">Simpan</button>
                 </div>
             </div>
         </div>
@@ -508,9 +480,9 @@
                         <input id="hp" type="number" class="form-control" placeholder="Contoh : 081234567890" value="" required>
                     </div>
 
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalUser">Simpan</button>
                 </div>
             </div>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalUser">Simpan</button>
         </div>
 
     </div>
