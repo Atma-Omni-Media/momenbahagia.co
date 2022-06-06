@@ -386,4 +386,11 @@ class AdminModel extends Model
     	return $this->mempelai->insert($data);
 
     }
+
+    public function save_order($data){
+
+    	return $this->order->insert($data);
+
+    }
+    
 }

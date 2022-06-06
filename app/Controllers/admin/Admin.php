@@ -484,6 +484,7 @@ class Admin extends Controller
         $data['title'] = 'Add Pengguna';
         $data['view'] = 'admin/add_pengguna';
 
+        $data['tema'] = $this->AdminModel->get_all_themes()->getResult();
         $data['user'] = $this->AdminModel->get_user_by_id_user();
         $data['fitur'] = $this->AdminModel->get_fitur_by_id_user();
         $data['acara'] = $this->AdminModel->get_acara_by_id_user();
@@ -543,8 +544,20 @@ class Admin extends Controller
 	 		'nama_ayah_wanita' => $nama_ayah_wanita,
 	 	];
          
-         $saveMempelai = $this->AdminModel->save_mempelai($dataMempelai);
-         
+        $this->AdminModel->save_mempelai($dataMempelai);
+        //order
+	 	$theme = $this->request->getPost('theme');
+
+	 	$dataOrder = [
+	 		'id_user' => $id_user,
+	 		'domain' => $domain,
+	 		'theme' => $theme,
+	 		'status' => '1'
+
+	 	];
+
+	 	$saveOrder = $this->AdminModel->save_order($dataOrder);
+
          if($saveUser){
             echo 'sukses';
         }else{
