@@ -202,22 +202,22 @@
                       <div class="col mt-2">
                           <label>Tanggal </label>
                           <input type="text" class="form-control" id="datepicker" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="Jumat, 17 Januari 2020" >
-                          <input type="hidden" id="tanggal_akad" value="">
+                          <input type="hidden" name="tanggal_akad" id="tanggal_akad" value="">
                       </div>
 
                       <div class="col mt-2">
                           <label>Waktu / Jam</label>
-                          <input id="waktu_akad" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
+                          <input name="waktu_akad" id="waktu_akad" type="time" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Tempat / Lokasi</label>
-                          <input id="lokasi_akad" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
+                          <input name="lokasi_akad" id="lokasi_akad" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Alamat</label>
-                          <textarea id="alamat_akad" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_akad ?></textarea>
+                          <textarea name="alamat_akad" id="alamat_akad" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_akad ?></textarea>
                       </div>
                   </div>
               </div>
@@ -233,22 +233,22 @@
                       <div class="col mt-2">
                           <label>Tanggal </label>
                           <input type="text" class="form-control" id="datepicker2" placeholder="Tanggal" readonly="readonly" style="cursor:pointer; background-color: #FFFFFF" value="<?= $acara[0]->tanggal_resepsi ?>" > 
-                          <input type="hidden" id="tanggal_resepsi" value="">
+                          <input type="hidden" name="tanggal_resepsi" id="tanggal_resepsi" value="">
                       </div>
 
                       <div class="col mt-2">
                           <label>Waktu / Jam</label>
-                          <input id="waktu_resepsi" type="text" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
+                          <input name="waktu_resepsi" id="waktu_resepsi" type="time" class="form-control" placeholder="Contoh : 10.00 Pagi" value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Tempat / Lokasi</label>
-                          <input id="lokasi_resepsi" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
+                          <input name="lokasi_resepsi" id="lokasi_resepsi" type="text" class="form-control" placeholder="Contoh : Kediaman Mempelai Wanita " value="" >
                       </div>
 
                       <div class="col mt-2">
                           <label>Alamat</label>
-                          <textarea id="alamat_resepsi" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_resepsi ?></textarea>
+                          <textarea name="alamat_resepsi" id="alamat_resepsi" type="text" class="form-control" placeholder="Contoh : JL. Ahmad Yani No.1"><?= $acara[0]->alamat_resepsi ?></textarea>
                       </div>
                   </div>
               </div>

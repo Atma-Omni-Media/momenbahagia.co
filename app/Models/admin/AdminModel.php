@@ -393,4 +393,9 @@ class AdminModel extends Model
 
     }
     
+    public function save_acara($data){
+
+    	return $this->acara->insert($data);
+
+    }
 }

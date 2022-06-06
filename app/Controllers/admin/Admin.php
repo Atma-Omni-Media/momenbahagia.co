@@ -556,9 +556,36 @@ class Admin extends Controller
 
 	 	];
 
-	 	$saveOrder = $this->AdminModel->save_order($dataOrder);
+	 	$this->AdminModel->save_order($dataOrder);
+        
+         //acara
 
-         if($saveUser){
+	 	$tanggal_akad = $this->request->getPost('tanggal_akad');
+	 	$waktu_akad = $this->request->getPost('waktu_akad');
+	 	$lokasi_akad = $this->request->getPost('lokasi_akad');
+	 	$alamat_akad = $this->request->getPost('alamat_akad');
+
+	 	$tanggal_resepsi = $this->request->getPost('tanggal_resepsi');
+	 	$waktu_resepsi = $this->request->getPost('waktu_resepsi');
+	 	$lokasi_resepsi = $this->request->getPost('lokasi_resepsi');
+		$alamat_resepsi = $this->request->getPost('alamat_resepsi');
+		 
+		$maps =  $this->session->get('maps_resepsi');
+
+	 	$dataAcara = [
+	 		'id_user' => $id_user,
+	 		'tanggal_akad' => $tanggal_akad,
+	 		'jam_akad' => $waktu_akad,
+	 		'tempat_akad' => $lokasi_akad,
+	 		'alamat_akad' => $alamat_akad,
+	 		'tanggal_resepsi' => $tanggal_resepsi,
+	 		'jam_resepsi' => $waktu_resepsi,
+	 		'tempat_resepsi' => $lokasi_resepsi,
+	 		'alamat_resepsi' => $alamat_resepsi
+	 	];
+
+        $saveAcara = $this->AdminModel->save_acara($dataAcara);
+        if($saveAcara){
             echo 'sukses';
         }else{
             echo 'gagal';
