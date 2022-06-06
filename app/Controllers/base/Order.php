@@ -500,25 +500,6 @@ class Order extends Controller
 		$email = $this->session->get('email');
 		$domain = $this->session->get('domain');
 
-		//untuk menghindari doubble insert ketika ditekan tombol back setealh success
-		$cekUser = $this->order->cek_email($email);
-		if(!empty($cekUser->getResult())){
-			$cekOrder = $this->order->cek_order_domain($domain);
-			if(!empty($cekOrder->getResult())){
-				foreach ($cekOrder->getResult() as $row)
-				{
-					$kodenya = $row->kunci;
-
-				}
-
-				return redirect()->to(base_url('/order/success/'.$kodenya));
-
-			}else{
-				echo "Terjadi Kesalahan"; //user berhasil daftar tapi data tidak masuk semua (interupt)
-				exit();
-			}
-		}
-
 		//users
 	 	$hp = $this->session->get('hp');
 	 	$username = $email;
@@ -703,7 +684,25 @@ class Order extends Controller
 	 	$saveAcara = $this->order->save_acara($dataAcara);
 	 	$saveOrder = $this->order->save_order($dataOrder);
 		$saveUser = $this->order->save_mempelai($dataMempelai);
-
+				//untuk menghindari doubble insert ketika ditekan tombol back setealh success
+				$cekUser = $this->order->cek_email($email);
+				if(!empty($cekUser->getResult())){
+					$cekOrder = $this->order->cek_order_domain($domain);
+					if(!empty($cekOrder->getResult())){
+						foreach ($cekOrder->getResult() as $row)
+						{
+							$kodenya = $row->kunci;
+		
+						}
+		
+						return redirect()->to(base_url('/order/success/'.$kodenya));
+		
+					}else{
+						echo "Terjadi Kesalahan"; //user berhasil daftar tapi data tidak masuk semua (interupt)
+						exit();
+					}
+				}
+		
 	 	if($saveUser){
 
 			$this->session->destroy();
