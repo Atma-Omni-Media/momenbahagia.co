@@ -81,6 +81,7 @@ class Admin extends Controller
         $data['title'] = 'Data Pengguna';
         $data['view'] = 'admin/pengguna';
         $data['join'] = $this->AdminModel->get_all_join();
+        // return json_encode($data['join']);
         return view('admin/layout', $data);
     }
 
@@ -490,7 +491,7 @@ class Admin extends Controller
         $data['acara'] = $this->AdminModel->get_acara_by_id_user();
         $data['mempelai'] = $this->AdminModel->get_mempelai_by_id_user();
         $data['cerita'] = $this->AdminModel->get_cerita_by_id_user(); 
-        $data['album'] = $this->AdminModel->get_album_by_id_user();
+        // $data['album'] = $this->AdminModel->get_album_by_id_user();
         $data['data'] = $this->AdminModel->get_data_by_id_user();
         $data['order'] = $this->AdminModel->get_order_by_id_user();
         return view('admin/layout', $data);
@@ -627,12 +628,102 @@ class Admin extends Controller
 			$video = '';
 			$gallery = 1;
 		}
-
-        if($saveAlbum){
-            echo 'sukses';
-        }else{
-            echo 'gagal';
+        $kunci = md5($id_user.$domain);
+        $groom = $this->request->getFile('foto_pria');
+        $bride = $this->request->getFile('foto_bride');
+        // $sampul = $this->request->getFile('foto_sampul');
+        $path = 'assets/users/'.$kunci;
+        //cek folder e
+        
+        if(!file_exists($path)){
+        	$create = mkdir('assets/users/'.$kunci, 0777,true);
         }
+         
+        $status_pria = 0;
+        $status_wanita = 0;
+        if($groom != ''){ //cek dulu ini fotonya siapa
+        	$avatar = $groom;
+            $status_pria = 1;
+        	$pathName = 'assets/users/'.$kunci.'/groom.png';
+        	if(file_exists($pathName)){
+        		unlink($pathName); //hapus dulu foto yg lama
+	    	} 
+				$avatar->move('assets/users/'.$kunci, 'groom.png'); //upload yg baru
+			
+        }else if($bride != ''){
+            
+            $avatar = $bride;
+            $status_wanita = 1;
+            $pathName = 'assets/users/'.$kunci.'/bride.png';
+            if(file_exists($pathName)){
+                unlink($pathName);
+            } 
+            $avatar->move('assets/users/'.$kunci, 'bride.png');
+            $this->session->set('foto_bride', 1);
+            
+        }
+        
+		$dataData = [
+			'id_user' => $id_user,
+			'foto_pria' => $status_pria,
+			'foto_wanita' => $status_wanita,
+			'video' => $video,
+			'kunci' => $kunci,
+			'maps' => $maps,
+			'salam_pembuka' => "Assalamu'alaikum warahmatullahi wabarakatuh\nDengan memohon rahmat dan ridho Allah SWT, Kami akan menyelenggarakan resepsi pernikahan Putra-Putri kami :
+			",
+		];
+
+        // return json_encode($dataData);
+        $saveData = $this->AdminModel->save_data($dataData);
+
+        $cerita = $this->request->getPost('cerita');
+        $album = $this->request->getPost('gallery');
+        $ucapan = $this->request->getPost('komen');
+        $lokasi = $this->request->getPost('lokasi');
+
+        if($cerita == "on"){
+            $cerita = '1';
+        }else{
+            $cerita = '0';
+        }
+
+        if($album == "on"){
+            $album = '1';
+        }else{
+            $album = '0';
+        }
+
+        if($ucapan == "on"){
+            $ucapan = '1';
+        }else{
+            $ucapan = '0';
+        }
+        
+        if($lokasi == "on"){
+            $lokasi = '1';
+        }else{
+            $lokasi = '0';
+        }
+
+        $data['id_user'] = $id_user;
+        $data['sampul'] = 1;
+        $data['mempelai'] = 1;
+        $data['acara'] = 1;
+        $data['cerita'] = $cerita;
+        $data['gallery'] = $album;
+        $data['komen'] = $ucapan;
+        $data['lokasi'] = $lokasi;
+        $saveFitur = $this->AdminModel->save_fitur($data);
+
+        //pembayaran
+		$dataPembayaran = [
+			'id_user' => $id_user,
+			'invoice' => $kode,
+			'status' => '2'
+		];
+        $saveOrder = $this->AdminModel->save_pembayaran($dataPembayaran);
+        return redirect()->to(base_url('/admin/pengguna'));
     }
     
 }

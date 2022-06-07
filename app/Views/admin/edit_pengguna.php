@@ -465,8 +465,7 @@
                         <label class="custom-control-label" for="setAlbum" >Halaman Gallery/Album</label>
                       </div>
                       <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="setCerita"
-                        <?php if($fitur[0]->cerita == '1') echo 'checked'; ?>>
+                        <input type="checkbox" class="custom-control-input" id="setCerita" value="1">
                         <label class="custom-control-label" for="setCerita">Halaman Cerita</label>
                       </div>
                       <div class="custom-control custom-switch mt-2">
