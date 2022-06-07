@@ -24,7 +24,7 @@
                   <div class="card-body">
                       <!-- CONTENT DISINI -->
                       <div class="upload-area-bg" style="text-align: center;">
-                          <div class="col">
+                          <div class="col-lg-12">
                               <div class="row">
                                   <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                                       <div class="upload-area" style="height: 100%;padding: 5px 5px;">
@@ -137,7 +137,7 @@
                   </div>
               </div>
           </div>
-        </div>
+        
         <!-- ========== ACARA  ==========-->
           <div class="col-xl-6 col-lg-6 mb-4">
               <div class="card mb-4">
@@ -376,8 +376,7 @@
 
             </div>
         </div>
-               
-        <div class="row">
+      <!-- ========= PROFIL ========= -->
         <div class="col-12 col-12 mb-4">
               <div class="card mb-4">
                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -431,12 +430,10 @@
               </div>
           </div>
         </div>
-        <!-- ========= PROFIL ========= -->
-        <div class="col-xl-6 col-lg-6 mb-4">
-            <div class="card mb-4">
-                
+               
+        <div class="row">
 
-            </div>
+        <div class="col-xl-12 col-lg-6 mb-4">
             <button class="btn btn-primary">Simpan</button>
         </div>
 
