@@ -5,6 +5,7 @@ use App\Models\admin\AdminModel;
 
 class Admin extends Controller
 {
+    protected $order,$uri,$request,$db;
     public function __construct() {
         //mengisi variable global dengan data
         $this->session = session();
@@ -13,6 +14,11 @@ class Admin extends Controller
         $this->uri = $this->request->uri; //class request digunakan untuk request uri/url
         // $this->session->set('uname_admin','mantab');
         // $this->session->set('id_admin','1');
+        	//load service bawaan ci
+		$this->request = \Config\Services::request(); 
+		$this->session = \Config\Services::session();  //untuk membaca session 
+		$this->db  = \Config\Database::connect(); //untuk melakukan CRUD ke databse
+		$this->uri = $this->request->uri;
     }
 
     public function index()
@@ -466,6 +472,166 @@ class Admin extends Controller
                     echo 'gagal';
                 }
             }   
+        }
+    }
+
+    public function add_pengguna(){
+
+        if($this->request->getMethod() == 'post'){
+            $id = $this->request->getPost('id');
+            $this->session->set('id_usernya', $id);
+        }
+        $data['title'] = 'Add Pengguna';
+        $data['view'] = 'admin/add_pengguna';
+
+        $data['tema'] = $this->AdminModel->get_all_themes()->getResult();
+        $data['user'] = $this->AdminModel->get_user_by_id_user();
+        $data['fitur'] = $this->AdminModel->get_fitur_by_id_user();
+        $data['acara'] = $this->AdminModel->get_acara_by_id_user();
+        $data['mempelai'] = $this->AdminModel->get_mempelai_by_id_user();
+        $data['cerita'] = $this->AdminModel->get_cerita_by_id_user(); 
+        $data['album'] = $this->AdminModel->get_album_by_id_user();
+        $data['data'] = $this->AdminModel->get_data_by_id_user();
+        $data['order'] = $this->AdminModel->get_order_by_id_user();
+        return view('admin/layout', $data);
+
+    }
+
+    public function save_pengguna(){
+        $email = $this->request->getPost('email');
+		$domain = $this->request->getPost('domain');
+        $password = $this->request->getPost('password');
+		//users
+
+	 	$hp = $this->request->getPost('hp');
+	 	$username = $email;
+	 	$password = $password;
+	 	$dataUser = [
+	 		'email' => $email,
+	 		'hp' => $hp,
+	 		'username' => $username,
+	 		'password' => md5($password),
+	 		'id_unik' => '',
+	 	];
+		
+		//insert dulu data user nya nanti diambil idnya 
+	 	$saveUser = $this->AdminModel->save_user($dataUser);
+        $id_user = $this->db->insertID(); //ambil id 
+        
+        $today = date('ym');
+        $kode = $today.$id_user.rand(10,99); //dijadikan invoice sekaligus kode unik user. Formatnya ( 2 digit tahun, 2 digit bulan, id user, random 2 angka)
+        $this->AdminModel->update_kode($kode,$id_user);
+        	//mempelai
+	 	$nama_lengkap_pria = $this->request->getPost('nama_lengkap_pria');
+	 	$nama_panggilan_pria = $this->request->getPost('nama_panggilan_pria');
+	 	$nama_ibu_pria = $this->request->getPost('nama_ibu_pria');
+	 	$nama_ayah_pria = $this->request->getPost('nama_ayah_pria');
+
+	 	$nama_lengkap_wanita = $this->request->getPost('nama_lengkap_wanita');
+	 	$nama_panggilan_wanita = $this->request->getPost('nama_panggilan_wanita');
+	 	$nama_ibu_wanita = $this->request->getPost('nama_ibu_wanita');
+	 	$nama_ayah_wanita = $this->request->getPost('nama_ayah_wanita');
+         
+	 	$dataMempelai = [
+	 		'id_user' => $id_user,
+	 		'nama_pria' => $nama_lengkap_pria,
+	 		'nama_panggilan_pria' => $nama_panggilan_pria,
+	 		'nama_ibu_pria' => $nama_ibu_pria,
+	 		'nama_ayah_pria' => $nama_ayah_pria,
+	 		'nama_wanita' => $nama_lengkap_wanita,
+	 		'nama_panggilan_wanita' => $nama_panggilan_wanita,
+	 		'nama_ibu_wanita' => $nama_ibu_wanita,
+	 		'nama_ayah_wanita' => $nama_ayah_wanita,
+	 	];
+         
+        $this->AdminModel->save_mempelai($dataMempelai);
+        //order
+	 	$theme = $this->request->getPost('theme');
+
+	 	$dataOrder = [
+	 		'id_user' => $id_user,
+	 		'domain' => $domain,
+	 		'theme' => $theme,
+	 		'status' => '1'
+
+	 	];
+
+	 	$this->AdminModel->save_order($dataOrder);
+        
+         //acara
+
+	 	$tanggal_akad = $this->request->getPost('tanggal_akad');
+	 	$waktu_akad = $this->request->getPost('waktu_akad');
+	 	$lokasi_akad = $this->request->getPost('lokasi_akad');
+	 	$alamat_akad = $this->request->getPost('alamat_akad');
+
+	 	$tanggal_resepsi = $this->request->getPost('tanggal_resepsi');
+	 	$waktu_resepsi = $this->request->getPost('waktu_resepsi');
+	 	$lokasi_resepsi = $this->request->getPost('lokasi_resepsi');
+		$alamat_resepsi = $this->request->getPost('alamat_resepsi');
+		 
+		$maps =  $this->session->get('maps_resepsi');
+
+	 	$dataAcara = [
+	 		'id_user' => $id_user,
+	 		'tanggal_akad' => $tanggal_akad,
+	 		'jam_akad' => $waktu_akad,
+	 		'tempat_akad' => $lokasi_akad,
+	 		'alamat_akad' => $alamat_akad,
+	 		'tanggal_resepsi' => $tanggal_resepsi,
+	 		'jam_resepsi' => $waktu_resepsi,
+	 		'tempat_resepsi' => $lokasi_resepsi,
+	 		'alamat_resepsi' => $alamat_resepsi
+	 	];
+
+        $this->AdminModel->save_acara($dataAcara);
+        //cerita
+        
+	 	$skipCerita = $this->request->getPost('jml_cerita');
+	 	$cerita = 0;
+         
+        //  return $skipCerita;
+		if($skipCerita > 0){
+            
+			$jml_cerita = $this->request->getPost('jml_cerita'); 
+            $tgl_cerita = $this->request->getPost('tanggal_cerita');
+            $judul_cerita = $this->request->getPost('judul_cerita');
+            foreach ($tgl_cerita as $key => $val) {
+                $dataCerita = array(             
+                   'tanggal_cerita' => $tgl_cerita[$key],
+                   'judul_cerita' => $judul_cerita[$key]       
+                );      
+             }      
+           
+			$saveCerita = $this->AdminModel->save_cerita($dataCerita);
+			// }
+			$cerita = 1;
+		}
+
+        //gallery
+		$skipGallery = $this->request->getPost('jml_cerita');
+		$video = '';
+		$gallery = 0;
+		$generate = $this->session->get('dummy');
+		if($skipGallery == ''){
+			for($a=1;$a<=10;$a++){
+		      $pathName = 'assets/users/'.$generate.'/album'.$a.'.png';
+		      if(!file_exists($pathName))continue;
+		      $dataAlbum = [
+		      	'id_user' => $id_user,
+		      	'album' => 'album'.$a
+
+		      ];
+		      $saveAlbum = $this->AdminModel->save_album($dataAlbum);
+			}
+			$video = '';
+			$gallery = 1;
+		}
+
+        if($saveAlbum){
+            echo 'sukses';
+        }else{
+            echo 'gagal';
         }
     }
     

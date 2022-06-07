@@ -95,14 +95,14 @@ define('SITE_NAME', 'MomenBahagia.Co'); ///NAMA WEBSITE
 // =========== development mode ============
 // //LINK DOMAIN WITH URL
 define('SITE_UTAMA', 'http://localhost/:8080'); 
-define('SITE_UNDANGAN', 'http://localhost:8080/undangan/');
-define('SITE_ADMIN', 'http://admin.localhost:8080');
+define('SITE_UNDANGAN', 'http://localhost/undangan');
+define('SITE_ADMIN', 'http://localhost/administrator');
 
 //DOMAIN ONLY
 define('DOMAIN_UTAMA', 'localhost:8080');
 define('DOMAIN_UTAMA_WWW', 'localhost:8080');
-define('DOMAIN_UNDANGAN', 'localhost:8080/undangan/');
-define('DOMAIN_ADMIN', 'admin.localhost:8080');
+define('DOMAIN_UNDANGAN', 'localhost:8080/undangan');
+define('DOMAIN_ADMIN', 'admin.localhost/administrator');
 
 
 //base url dinamis

@@ -11,6 +11,7 @@
 
         <!-- Invoice Example -->
         <div class="col-lg-12">
+              <a href="<?php echo base_url('admin/add_pengguna'); ?>" class="btn btn-sm btn-primary">Add Pengguna</a><hr>
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
                   <h6 class="m-0 font-weight-bold text-light">Data Ucapan</h6>
