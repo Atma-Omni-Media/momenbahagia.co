@@ -162,7 +162,7 @@
               </div>
           </div>
 
-          <div class="col-xl-6 col-lg-6 mb-4">
+          <div class="col-xl-12 col-lg-12 mb-4">
               <div class="card mb-4">
                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                       <h6 class="m-0 font-weight-bold text-primary">Data Foto Sampul</h6>
@@ -297,7 +297,6 @@
                 </div>
                 <div class="card-body">
                    
-                    <form method="post" action="<?php echo base_url('admin/update_cerita'); ?>">
                     <div id="konten-cerita" >
                     
                         <?php 
@@ -320,7 +319,6 @@
                             <a id="addCerita" class="btn btn-primary btn-order btn-order-secondary btn-block" style="color:#fff">Tambah Cerita</a>
                         </div>
                     </div>
-                    </form>        
                 </div>
                 
 
@@ -343,12 +341,12 @@
                                     <i class="lni-cloud-download"></i>
                                 </div>
                                 <h3 class="upload-area-caption">
-                                    <span>Drag and drop files here</span>
+                                    <span>Drag and drop files heress</span>
                                 </h3>
                                 <p>or</p>
-                                <button class="upload-area-button btn " style="z-index:9999;">
+                                <a href="#" class="upload-area-button btn " style="z-index:9999;">
                                     <span style="color:#fff">Browse files</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -367,6 +365,7 @@
                         <div class="preview-uploads" id="preview<?= $a ?>">
                             <div class="preview-uploads-img">
                                 <span class="preview">
+                                <input type="hidden" name="jml_gallery" value="<?= $a ?>">
                                 <img id="img<?= $a ?>" src="<?= base_url() ?>/assets/users/<?= $kunci ?>/album<?= $a ?>.png"  style="height: 100%;object-position: center;object-fit: cover;width: 100%;"  />
                                 </span>
                             </div>
@@ -391,24 +390,7 @@
             </div>
         </div>
 
-        <!-- ========== PENGATURAN ========== -->
-        <div class="col-xl-6 col-lg-6 mb-4">
-              <!-- Form Basic -->
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Pengaturan Undangan</h6>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                    <label>Nama Domain / URL Undangan</label>
-                    <label style="bottom: -12.3px;position: inherit;padding-left: 15px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -2.1rem;"><?= base_url().'undangan' ?>.com/</label>
-                    <input id="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 200px;" value=""  onkeyup="nospaces(this)" >
-                    </div>
 
-          
-                </div>
-              </div>
-        </div>
 
         <div class="col-xl-6 col-lg-6 mb-4">
               <!-- Form Basic -->
@@ -479,32 +461,8 @@
         <!-- ========= PROFIL ========= -->
         <div class="col-xl-6 col-lg-6 mb-4">
             <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Profil Pengguna</h6>
-                </div>
-                <div class="card-body">
+                
 
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input id="username" type="text" class="form-control" placeholder="Contoh : reydinda" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input id="password" type="password" class="form-control" placeholder="********" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input id="email" type="email" class="form-control" placeholder="Contoh : reydinda" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nomor Hp</label>
-                        <input id="hp" type="number" class="form-control" placeholder="Contoh : 081234567890" value="" >
-                    </div>
-
-                </div>
             </div>
             <button class="btn btn-primary">Simpan</button>
         </div>
@@ -852,7 +810,7 @@
 
     // ============= GALLERY
 
-        var myDropzone = new Dropzone(document.body, { 
+    var myDropzone = new Dropzone(document.body, { 
     url: "<?php echo base_url('admin/update_gallery'); ?>", 
     paramName: "file",
     acceptedFiles: 'image/*',
@@ -868,8 +826,9 @@
 
         }else{
         var aql = JSON.parse(response);
+        console.log('ss');
         $('.dz-preview').remove();
-        $("#previewss").prepend('<div id="preview'+aql.no+'" class="file-row preview-uploads"><div class="preview-uploads-img"><span class="preview"><img id="img3" src="<?= base_url() ?>/assets/users/'+aql.kunci+'/album'+aql.no+'.png"  style="height: 100%;object-position: center;object-fit: cover;width: 100%;" /></span></div><div class="preview-uploads-name"><p class="name" style="line-height: revert;font-size: 12px;" data-dz-name>album'+aql.no+'</p><strong class="error text-danger" style="line-height: revert;font-size: 12px;"  ></strong><p class="size" style="line-height: revert;font-size: 12px;" >-</p></div><div  class="preview-uploads-delete"><button id="'+aql.no+'" class="btn btn-danger delete btnhehe">Hapus</button></div></div>');
+        $("#previewss").prepend('<input type="text" name="jml_gallery" value="'.+no+.'"><div id="preview'+aql.no+'" class="file-row preview-uploads"><div class="preview-uploads-img"><span class="preview"><img id="img3" src="<?= base_url() ?>/assets/users/'+aql.kunci+'/album'+aql.no+'.png"  style="height: 100%;object-position: center;object-fit: cover;width: 100%;" /></span></div><div class="preview-uploads-name"><p class="name" style="line-height: revert;font-size: 12px;" data-dz-name>album'+aql.no+'</p><strong class="error text-danger" style="line-height: revert;font-size: 12px;"  ></strong><p class="size" style="line-height: revert;font-size: 12px;" >-</p></div><div  class="preview-uploads-delete"><button id="'+aql.no+'" class="btn btn-danger delete btnhehe">Hapus</button></div></div>');
         }
         $('#loading').hide();
     });

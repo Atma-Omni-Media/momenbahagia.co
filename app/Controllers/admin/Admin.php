@@ -607,7 +607,28 @@ class Admin extends Controller
 			// }
 			$cerita = 1;
 		}
-        if($saveCerita){
+
+        //gallery
+		$skipGallery = $this->request->getPost('jml_cerita');
+		$video = '';
+		$gallery = 0;
+		$generate = $this->session->get('dummy');
+		if($skipGallery == ''){
+			for($a=1;$a<=10;$a++){
+		      $pathName = 'assets/users/'.$generate.'/album'.$a.'.png';
+		      if(!file_exists($pathName))continue;
+		      $dataAlbum = [
+		      	'id_user' => $id_user,
+		      	'album' => 'album'.$a
+
+		      ];
+		      $saveAlbum = $this->AdminModel->save_album($dataAlbum);
+			}
+			$video = '';
+			$gallery = 1;
+		}
+
+        if($saveAlbum){
             echo 'sukses';
         }else{
             echo 'gagal';
