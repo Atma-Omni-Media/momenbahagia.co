@@ -404,4 +404,21 @@ class AdminModel extends Model
         $this->cerita->insert($data);
     }
     
+    public function save_data($data){
+
+    	return $this->data->insert($data);
+
+    }
+
+    public function save_fitur($data){
+
+    	return $this->rules->insert($data);
+
+    }
+
+    public function save_pembayaran($data){
+
+    	return $this->pembayaran->insert($data);
+
+    }
 }
