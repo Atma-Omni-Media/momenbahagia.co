@@ -584,8 +584,30 @@ class Admin extends Controller
 	 		'alamat_resepsi' => $alamat_resepsi
 	 	];
 
-        $saveAcara = $this->AdminModel->save_acara($dataAcara);
-        if($saveAcara){
+        $this->AdminModel->save_acara($dataAcara);
+        //cerita
+        
+	 	$skipCerita = $this->request->getPost('jml_cerita');
+	 	$cerita = 0;
+         
+        //  return $skipCerita;
+		if($skipCerita > 0){
+            
+			$jml_cerita = $this->request->getPost('jml_cerita'); 
+            $tgl_cerita = $this->request->getPost('tanggal_cerita');
+            $judul_cerita = $this->request->getPost('judul_cerita');
+            foreach ($tgl_cerita as $key => $val) {
+                $dataCerita = array(             
+                   'tanggal_cerita' => $tgl_cerita[$key],
+                   'judul_cerita' => $judul_cerita[$key]       
+                );      
+             }      
+           
+			$saveCerita = $this->AdminModel->save_cerita($dataCerita);
+			// }
+			$cerita = 1;
+		}
+        if($saveCerita){
             echo 'sukses';
         }else{
             echo 'gagal';

@@ -398,4 +398,10 @@ class AdminModel extends Model
     	return $this->acara->insert($data);
 
     }
+
+    public function save_cerita_new($data){
+        $db  = \Config\Database::connect();
+        $this->cerita->insert($data);
+    }
+    
 }
