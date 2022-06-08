@@ -417,7 +417,6 @@ class Admin extends Controller
     }
 
     public function do_update_musik(){
-        
         $musik = $this->request->getFile('musik');
         $data = $this->AdminModel->get_data_by_id_user();
         $kunci = $data[0]->kunci;
@@ -440,7 +439,7 @@ class Admin extends Controller
         } 
 
         $musik->move('assets/users/'.$kunci,'musik.mp3');
-        return redirect()->to(base_url('user/pengaturan'));
+        return redirect()->to(base_url('admin/edit_pengguna'));
 
     }
 
