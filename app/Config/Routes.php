@@ -51,13 +51,12 @@ if(isset($_SERVER['HTTP_HOST'])){
 	$routes->post('admin/update_mempelai', 'Admin::do_update_mempelai');
 	$routes->post('admin/update_acara', 'Admin::do_update_acara');
 	$routes->post('admin/update_maps', 'Admin::do_update_maps');
-	$routes->post('admin/update_musik', 'Admin::do_update_musik');
 	$routes->post('admin/update_gallery', 'Admin::do_update_gallery');
 	$routes->post('admin/del_gallery', 'Admin::do_del_gallery');
 	$routes->post('admin/update_cerita', 'Admin::do_update_cerita');
-	$routes->post('administrator/admin/update_user', 'Admin::do_update_user');
-	$routes->post('administrator/admin/update_musik', 'Admin::do_update_musik');
-	$routes->post('administrator/admin/update_video', 'Admin::do_update_video');
+	$routes->post('admin/update_user', 'Admin::do_update_user');
+	$routes->post('admin/update_musik', 'Admin::do_update_musik');
+	$routes->post('admin/update_video', 'Admin::do_update_video');
 
 /* =================== UNTUK DOMAIN UTAMA ======================= */	
 
