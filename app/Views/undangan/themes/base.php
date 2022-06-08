@@ -272,7 +272,7 @@
     	
     	<div class="col-12 ucapan-field">
             <div class="section-title">
-				<h2>Beri Ucapan</h2>
+				<h2>Beri Ucapanss</h2>
 			</div>
 	                <div class="row">
 	                    <div class="col-12">

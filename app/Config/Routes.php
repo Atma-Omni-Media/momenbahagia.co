@@ -57,7 +57,7 @@ if(isset($_SERVER['HTTP_HOST'])){
 	$routes->post('admin/update_user', 'Admin::do_update_user');
 	$routes->post('admin/update_musik', 'Admin::do_update_musik');
 	$routes->post('admin/update_video', 'Admin::do_update_video');
-
+	$routes->get('admin/notif', 'Admin::notif');
 /* =================== UNTUK DOMAIN UTAMA ======================= */	
 
 

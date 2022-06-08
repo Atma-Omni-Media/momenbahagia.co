@@ -119,6 +119,7 @@ class Dashboard extends Controller
         $ganti = $this->DashboardModel->update_tema($data);
         if($ganti){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -260,6 +261,7 @@ class Dashboard extends Controller
         $update = $this->DashboardModel->update_mempelai($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -286,6 +288,7 @@ class Dashboard extends Controller
         $update = $this->DashboardModel->update_acara($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -320,6 +323,7 @@ class Dashboard extends Controller
         $update = $this->DashboardModel->update_video($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -434,7 +438,7 @@ class Dashboard extends Controller
 
                 $saveCerita = $this->DashboardModel->save_cerita($dataCerita);
             }
-
+            session()->setFlashdata("success", "Data telah dirubah");
             return redirect()->to(base_url('user/cerita'));
 
     }

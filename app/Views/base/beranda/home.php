@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/base/css/line-icons.css?SIDOINIKAHV2">
     <link type="text/css" href="<?php echo base_url() ?>/assets/base/css/froala_blocks.css?SIDOINIKAHV2" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
 
   </head>
 
@@ -332,7 +333,8 @@
             </div>
         </div>
     </footer>
-      
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
     <script src="<?php echo base_url() ?>/assets/base/js/jquery-min.js"></script>
     <script src="<?php echo base_url() ?>/assets/base/js/popper.min.js"></script>
     <script src="<?php echo base_url() ?>/assets/base/js/bootstrap.min.js"></script>

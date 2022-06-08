@@ -92,8 +92,11 @@ class Admin extends Controller
         $delete = $this->AdminModel->delete_user($id);
         if($delete){
             echo 'sukses';
+            session()->setFlashdata("error", "Data telah dihapus");
         }else{
-            echo 'gagal';
+            echo 'error';
+            $this->session->set_flashdata('error', 'Terjadi kesalahan');
+
         }
 
     }
@@ -112,6 +115,7 @@ class Admin extends Controller
         $update = $this->AdminModel->konfirmasi_user($id);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Status telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -162,6 +166,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_setting($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -203,6 +208,7 @@ class Admin extends Controller
         if($update){
             $this->session->set('uname', $data['username']);
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -275,6 +281,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_video($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -337,6 +344,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_acara($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -349,6 +357,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_maps($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -411,6 +420,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_mempelai($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -426,6 +436,7 @@ class Admin extends Controller
         {
             //jika file lebih dari 2mb
             //jika ingin lebih dari 2mb silahkan edit file php.ini (googling ya :) )
+            session()->setFlashdata("success", "Data telah dirubah");
             return redirect()->to(base_url('user/pengaturan'));
         }
         //cek folder e
@@ -451,6 +462,7 @@ class Admin extends Controller
         $update = $this->AdminModel->update_fitur($data);
         if($update){
             echo 'sukses';
+            session()->setFlashdata("success", "Data telah dirubah");
         }else{
             echo 'gagal';
         }
@@ -468,6 +480,7 @@ class Admin extends Controller
                 $update = $this->AdminModel->update_domain($domain);
                 if($update){
                     echo 'sukses';
+                    session()->setFlashdata("success", "Data telah dirubah");
                 }else{
                     echo 'gagal';
                 }
@@ -722,7 +735,23 @@ class Admin extends Controller
 			'status' => '2'
 		];
         $saveOrder = $this->AdminModel->save_pembayaran($dataPembayaran);
+        session()->setFlashdata("success", "Data telah tersimpan");
         return redirect()->to(base_url('/admin/pengguna'));
     }
+
+    public function notif()
+	{
+		// Flash messages settings
+
+		session()->setFlashdata("success", "This is success message");
+
+		session()->setFlashdata("warning", "This is warning message");
+
+		session()->setFlashdata("info", "This is information message");
+
+		session()->setFlashdata("error", "This is error message");
+
+        return view('admin/notif');
+	}
     
 }

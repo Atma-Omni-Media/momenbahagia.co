@@ -173,7 +173,7 @@
      ADD KOMENTAR
     ======================= */
     $('#submitKomen').on('click', function(event) {
-
+console.log('ss');
         $('#loading_').css('display','inline');
         $('#submitKomen').css('display','none');
         
@@ -181,7 +181,7 @@
         var komentar =  $('#komentar').val();
 
         $.ajax({
-            url : base_url+'/add_komentar',
+            url : base_url+'/undangan/add_komentar',
             method : "POST",
             data : {nama: nama,komentar: komentar},
             async : true,

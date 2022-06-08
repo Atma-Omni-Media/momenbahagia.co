@@ -309,7 +309,6 @@ class AdminModel extends Model
         $this->mempelai->where('id_user', $id)->delete();
         $this->data->where('id_user', $id)->delete();
         $this->acara->where('id_user', $id)->delete();
-        $this->maps->where('id_user', $id)->delete();
         $this->album->where('id_user', $id)->delete();
         $this->cerita->where('id_user', $id)->delete(); 
         $this->users->where('id', $id)->delete();

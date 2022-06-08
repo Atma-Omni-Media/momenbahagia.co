@@ -181,7 +181,7 @@
         var komentar =  $('#komentar').val();
 
         $.ajax({
-            url : base_url+'/add_komentar',
+            url : base_url+'/undangan/add_komentar',
             method : "POST",
             data : {nama: nama,komentar: komentar},
             async : true,

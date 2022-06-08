@@ -1,4 +1,27 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
 
+<script>
+$(function(){
+
+    <?php if(session()->has("error")) { ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '<?= session("error") ?>'
+        })
+    <?php } ?>
+
+    <?php if(session()->has("success")) { ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Great!',
+            text: '<?= session("success") ?>'
+        })
+    <?php } ?>
+});
+</script>
 
 <!-- Container Fluid-->
 <div class="container-fluid" id="container-wrapper">
@@ -7,8 +30,6 @@
     </div>
 
     <div class="row mb-3">
-
-
         <!-- Invoice Example -->
         <div class="col-lg-12">
               <a href="<?php echo base_url('admin/add_pengguna'); ?>" class="btn btn-sm btn-primary">Add Pengguna</a><hr>
@@ -126,9 +147,7 @@
     });
 
     $('#hapusBtn').on('click', function(event) {
-
         var id = $('#iduser').val();
-    
         $.ajax({
             url : "<?= base_url('admin/hapus_user') ?>",
             method : "POST",
