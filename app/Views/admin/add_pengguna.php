@@ -4,7 +4,7 @@
         <h1 class="h3 mb-0 text-gray-800"><?= $title; ?></h1>
     </div> 
 
-    <form method="post" action="<?= base_url('admin/pelanggan/save'); ?>">
+    <form method="post" action="<?= base_url('admin/pelanggan/save'); ?>" enctype="multipart/form-data">
     <div class="row mb-3">
 
         <!-- ========== MEMPELAI =========== -->
@@ -14,60 +14,7 @@
             $fotobride = "/assets/users/".$kunci."/bride.png";
             $fotosampul = "/assets/users/".$kunci."/kita.png";
         ?>
-        <div class="row">
-          <div class="col-xl-12 col-lg-12 mb-4">
-              <div class="card mb-4">
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                      <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
-                  </div>
-                  <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col md-6">
-                          <label>Theme</label>
-                          <select name="theme" class="single form-control">
-                            <?php foreach($tema as $value){ ?>
-                              <option value="<?php echo $value->id ?>"><?php echo $value->nama_theme ?></option>
-                            <?php } ?>
-                          </select>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row align-items-center">
-                        <div class="col md-6">
-                          <label>Nama Domain / URL Undangan</label>
-                          <label style="bottom: -12.3px;position: inherit;padding-left: 20px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -1.2rem;"><?= base_url().'/undangan' ?>/</label>
-                          <input name="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 350px;" value="<?php echo $domain; ?>"  onkeyup="nospaces(this)" required>
-                        </div>
-                        
-                      </div>
-                      <div class="row align-items-center mt-3"> 
-                        <div class="col">
-                          <label>Email</label>
-                          <input name="email" type="email" class="form-control" placeholder="Email" value="">
-                        </div>
-                      </div>
-                      <div class="row align-items-center mt-3"> 
-                        <div class="col">
-                          <label>Username</label>
-                          <input name="username" type="text" class="form-control" placeholder="Username" value="">
-                        </div>
-                      </div>
-                      <div class="row align-items-center mt-3">
-                        <div class="col">
-                          <label>Password</label>
-                          <input name="password" type="password" class="form-control" placeholder="Password" value="">
-                        </div>
-                      </div>
-                      <div class="row align-items-center mt-3">
-                        <div class="col">
-                          <label>Nomer HP / WhatsApp</label>
-                          <input name="hp" type="number" class="form-control" placeholder="0" value="<?php echo $hp; ?>">
-                        </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
+      
         <div class="row">
           <div class="col-xl-6 col-lg-6 mb-4">
               <div class="card mb-4">
@@ -77,16 +24,16 @@
                   <div class="card-body">
                       <!-- CONTENT DISINI -->
                       <div class="upload-area-bg" style="text-align: center;">
-                          <div class="col">
+                          <div class="col-lg-12">
                               <div class="row">
                                   <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                                       <div class="upload-area" style="height: 100%;padding: 5px 5px;">
-                                      <img src="../assets/admin/img/girl.png" id="profile-pic-groom" style='border-radius: 5px;height: 200px;width: 200px;'>
+                                      <img src="" id="profile-pic-groom" style='border-radius: 5px;height: 200px;width: 200px;'>
                                       </div>
                                   </div>
                                   <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center mt-3">
                                       <div class="btn btn-primary">
-                                          <input type="file" class="file-upload" id="groom"  name="profile_picture" accept="image/*"> Upload Foto
+                                          <input type="file" class="file-upload" id="groom" name="foto_pria" accept="image/*"> Upload Foto
                                       </div>
                                   </div>
                               </div>   
@@ -128,12 +75,12 @@
                               <div class="row">
                                   <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                                       <div class="upload-area" style="height: 100%;padding: 5px 5px;">
-                                      <img src="<?php echo base_url() ?><?= $fotobride ?>" id="profile-pic-bride" style='border-radius: 5px;height: 200px;width: 200px;'>
+                                      <img src="" id="profile-pic-bride" style='border-radius: 5px;height: 200px;width: 200px;'>
                                       </div>
                                   </div>
                                   <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center mt-3">
                                       <div class="btn btn-primary">
-                                          <input type="file" class="file-upload" id="bride"  name="profile_picture" accept="image/*"> Upload Foto
+                                          <input type="file" class="file-upload" id="bride"  name="foto_wanita" accept="image/*"> Upload Foto
                                       </div>
                                   </div>
                               </div>   
@@ -162,7 +109,7 @@
               </div>
           </div>
 
-          <div class="col-xl-6 col-lg-6 mb-4">
+          <div class="col-xl-12 col-lg-12 mb-4">
               <div class="card mb-4">
                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                       <h6 class="m-0 font-weight-bold text-primary">Data Foto Sampul</h6>
@@ -190,7 +137,7 @@
                   </div>
               </div>
           </div>
-        </div>
+        
         <!-- ========== ACARA  ==========-->
           <div class="col-xl-6 col-lg-6 mb-4">
               <div class="card mb-4">
@@ -291,71 +238,50 @@
         
         <!-- ========== CERITA ========== -->
         <div class="col-xl-6 col-lg-6 mb-4">
+         <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Cerita</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Fitur Undangan</h6>
                 </div>
                 <div class="card-body">
-                   
-                    <form method="post" action="<?php echo base_url('admin/update_cerita'); ?>">
-                    <div id="konten-cerita" >
-                    
-                        <?php 
-                            $jml_cerita = count($cerita);
-                            for($i=0;$i < $jml_cerita;$i++){ 
-                        ?>
-
-                            <div id="cerita<?php echo $i+1 ?>">
-                                <div class="row align-items-center mt-3">
-                                    <div class="col-auto">
-                                        <a style="color: #2c3e50;margin-bottom:0px;font-size: 20px;font-weight: 600;display: flex;">#<?php echo $i+1 ?></a>
-                                    </div>
-                                    <div class="col">
-                                        <a id="<?php echo $i+1 ?>" class="btn btn-sm btn_remove" style="background-color: #dc3545;padding: 5px;font-size: 12px;border-radius: 5px;color:#fff">Hapus</a>
-                                    </div>
-                                </div>
-
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <label>Tanggal</label>
-                                        <input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 20 Februari 2020" value="" >
-                                    </div>
-                                </div>
-
-                                <div class="row align-items-center mt-3">
-                                    <div class="col">
-                                        <label>Judul</label>
-                                        <input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Ta'aruf" value="" >
-                                    </div>
-                                </div>
-
-                                <div class="row align-items-center mt-3">
-                                    <div class="col">
-                                        <label>Isi Cerita</label>
-                                        <textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" ><?= $cerita[$i]->isi_cerita ?></textarea>
-                                    </div>
-                                </div>
-                            </div>  
-
-                        <?php 
-                            }
-                        ?>
-
+                    <div class="form-group">
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" disabled checked id="setSampul">
+                        <label class="custom-control-label" for="setSampul" >Halaman Sampul</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" class="custom-control-input" disabled checked id="setMempelai">
+                        <label class="custom-control-label" for="setMempelai" >Halaman Mempelai</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" class="custom-control-input" disabled checked id="setAcara">
+                        <label class="custom-control-label" for="setAcara" >Halaman Acara</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" name="komen" class="custom-control-input" id="setUcapan" 
+                        <?php if($fitur[0]->komen == '1') echo 'checked'; ?>>
+                        <label class="custom-control-label" for="setUcapan" >Halaman Ucapan</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" name="gallery" class="custom-control-input" id="setAlbum"
+                        <?php if($fitur[0]->gallery == '1') echo 'checked'; ?>>
+                        <label class="custom-control-label" for="setAlbum" >Halaman Gallery/Album</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" name="cerita" class="custom-control-input" id="setCerita"
+                        <?php if($fitur[0]->cerita == '1') echo 'checked'; ?>>
+                        <label class="custom-control-label" for="setCerita">Halaman Cerita</label>
+                      </div>
+                      <div class="custom-control custom-switch mt-2">
+                        <input type="checkbox" name="lokasi" class="custom-control-input" id="setLokasi"
+                        <?php if($fitur[0]->lokasi == '1') echo 'checked'; ?>>
+                        <label class="custom-control-label" for="setLokasi" >Halaman Lokasi</label>
+                      </div>
                     </div>
-
-                    <div class="row mt-2" >
-                        <div class="col text-center">
-                            <a id="addCerita" class="btn btn-primary btn-order btn-order-secondary btn-block" style="color:#fff">Tambah Cerita</a>
-                        </div>
-                    </div>
-                    </form>        
                 </div>
-                
-
-
             </div>
         </div>
-
+        
         <!-- ========== GALLERY ========== -->
         <div class="col-xl-6 col-lg-6 mb-4">
             <div class="card mb-4">
@@ -371,12 +297,12 @@
                                     <i class="lni-cloud-download"></i>
                                 </div>
                                 <h3 class="upload-area-caption">
-                                    <span>Drag and drop files here</span>
+                                    <span>Drag and drop files heress</span>
                                 </h3>
                                 <p>or</p>
-                                <button class="upload-area-button btn " style="z-index:9999;">
+                                <a href="#" class="upload-area-button btn " style="z-index:9999;">
                                     <span style="color:#fff">Browse files</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -385,58 +311,14 @@
                         <img id="loading" src="<?= base_url() ?>/assets/base/img/loading.svg"  style="height: 30px;width: 30px; display: none;" />
                     </div>
                     <div id="previewss">
-                        <?php 
-                            $kunci = $data[0]->kunci;
-                            for($a=1;$a<=10;$a++){
-                                $pathName = 'assets/users/'.$kunci.'/album'.$a.'.png';
-                                if(!file_exists($pathName))continue;
-                        ?>
-
-                        <div class="preview-uploads" id="preview<?= $a ?>">
-                            <div class="preview-uploads-img">
-                                <span class="preview">
-                                <img id="img<?= $a ?>" src="<?= base_url() ?>/assets/users/<?= $kunci ?>/album<?= $a ?>.png"  style="height: 100%;object-position: center;object-fit: cover;width: 100%;"  />
-                                </span>
-                            </div>
-                            <div class="preview-uploads-name">
-                            <b><p class="name" style="line-height: revert;font-size: 12px;" >album<?= $a; ?></p></b>
-                            <strong class="error text-danger" style="line-height: revert;font-size: 12px;"  data-dz-errormessage></strong>
-                            <p class="size" style="line-height: revert;font-size: 12px;"  >-</p>     
-                            </div>
-                            <div  class="preview-uploads-delete">
-                            <button id="<?= $a ?>" data-dz-remove class="btn btn-danger delete btnhehe">
-                                Hapus
-                            </button>
-                            </div>
-                        </div>
-
-                        <?php
-                            }
-                        ?>
+                      
                     </div>
 
                 </div>
             </div>
         </div>
 
-        <!-- ========== PENGATURAN ========== -->
-        <div class="col-xl-6 col-lg-6 mb-4">
-              <!-- Form Basic -->
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Pengaturan Undangan</h6>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                    <label>Nama Domain / URL Undangan</label>
-                    <label style="bottom: -12.3px;position: inherit;padding-left: 15px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -2.1rem;"><?= base_url().'undangan' ?>.com/</label>
-                    <input id="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 200px;" value=""  onkeyup="nospaces(this)" >
-                    </div>
 
-          
-                </div>
-              </div>
-        </div>
 
         <div class="col-xl-6 col-lg-6 mb-4">
               <!-- Form Basic -->
@@ -458,82 +340,100 @@
               </div>
               </form>
         </div>
-
+te
         <div class="col-xl-6 col-lg-6 mb-4">
-         <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Fitur Undangan</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Data Cerita</h6>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                      <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" disabled checked id="setSampul">
-                        <label class="custom-control-label" for="setSampul" >Halaman Sampul</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" disabled checked id="setMempelai">
-                        <label class="custom-control-label" for="setMempelai" >Halaman Mempelai</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" disabled checked id="setAcara">
-                        <label class="custom-control-label" for="setAcara" >Halaman Acara</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="setUcapan" 
-                        <?php if($fitur[0]->komen == '1') echo 'checked'; ?>>
-                        <label class="custom-control-label" for="setUcapan" >Halaman Ucapan</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="setAlbum"
-                        <?php if($fitur[0]->gallery == '1') echo 'checked'; ?>>
-                        <label class="custom-control-label" for="setAlbum" >Halaman Gallery/Album</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="setCerita"
-                        <?php if($fitur[0]->cerita == '1') echo 'checked'; ?>>
-                        <label class="custom-control-label" for="setCerita">Halaman Cerita</label>
-                      </div>
-                      <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="setLokasi"
-                        <?php if($fitur[0]->lokasi == '1') echo 'checked'; ?>>
-                        <label class="custom-control-label" for="setLokasi" >Halaman Lokasi</label>
-                      </div>
+                   
+                    <div id="konten-cerita" >
+                    
+                        <?php 
+                            $jml_cerita = count($cerita);
+                            for($i=0;$i < $jml_cerita;$i++){ 
+                        ?>
+                            <!-- <input name="jml_cerita" type="text" value="<?php echo $i+1 ?>"> -->
+                            <div id="cerita<?php echo $i+1 ?>">
+                               
+                            </div>  
+
+                        <?php 
+                            }
+                        ?>
+
+                    </div>
+
+                    <div class="row mt-2" >
+                        <div class="col text-center">
+                            <a id="addCerita" class="btn btn-primary btn-order btn-order-secondary btn-block" style="color:#fff">Tambah Cerita</a>
+                        </div>
                     </div>
                 </div>
+                
+
+
             </div>
         </div>
+      <!-- ========= PROFIL ========= -->
+        <div class="col-12 col-12 mb-4">
+              <div class="card mb-4">
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
+                  </div>
+                  <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <label>Theme</label>
+                          <select name="theme" class="single form-control">
+                            <?php foreach($tema as $value){ ?>
+                              <option value="<?php echo $value->id ?>"><?php echo $value->nama_theme ?></option>
+                            <?php } ?>
+                          </select>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <label>Nama Domain / URL Undangan</label>
+                          <label style="bottom: -12.3px;position: inherit;padding-left: 20px;color: #005CAA;font-weight: bold;display: table;margin-bottom: -1.2rem;"><?= base_url().'/undangan' ?>/</label>
+                          <input name="domain" type="text" class="form-control" placeholder="akudandia" style="padding-left: 350px;" value="<?php echo $domain; ?>"  onkeyup="nospaces(this)" required>
+                        </div>
+                        
+                      </div>
+                      <div class="row align-items-center mt-3"> 
+                        <div class="col">
+                          <label>Email</label>
+                          <input name="email" type="email" class="form-control" placeholder="Email" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3"> 
+                        <div class="col">
+                          <label>Username</label>
+                          <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label>Password</label>
+                          <input name="password" type="password" class="form-control" placeholder="Password" value="">
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label>Nomer HP / WhatsApp</label>
+                          <input name="hp" type="number" class="form-control" placeholder="0" value="<?php echo $hp; ?>">
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+               
+        <div class="row">
 
-        <!-- ========= PROFIL ========= -->
-        <div class="col-xl-6 col-lg-6 mb-4">
-            <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Profil Pengguna</h6>
-                </div>
-                <div class="card-body">
-
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input id="username" type="text" class="form-control" placeholder="Contoh : reydinda" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input id="password" type="password" class="form-control" placeholder="********" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input id="email" type="email" class="form-control" placeholder="Contoh : reydinda" value="" >
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nomor Hp</label>
-                        <input id="hp" type="number" class="form-control" placeholder="Contoh : 081234567890" value="" >
-                    </div>
-
-                </div>
-            </div>
+        <div class="col-xl-12 col-lg-6 mb-4">
             <button class="btn btn-primary">Simpan</button>
         </div>
 
@@ -784,7 +684,7 @@
 
       i++;  
 
-      $('#konten-cerita').append('<div id="cerita'+i+'"><div class="row align-items-center mt-3"><div class="col-auto"><a style="color: #2c3e50;margin-bottom:0px;font-size: 20px;font-weight: 600;display: flex;">#'+i+'</a></div><div class="col"><a id="'+i+'" class="btn btn-sm btn_remove" style="background-color: #dc3545;padding: 5px;font-size: 12px;border-radius: 5px;">Hapus</a></div></div><div class="row align-items-center"><div class="col"><label>Tanggal</label><input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 14 Januari 2020 " ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Judul</label><input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Pertama Bertemu" ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Isi Cerita</label><textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" ></textarea></div></div></div>');  
+      $('#konten-cerita').append('<div id="cerita'+i+'"><div class="row align-items-center mt-3"><div class="col-auto"><a style="color: #2c3e50;margin-bottom:0px;font-size: 20px;font-weight: 600;display: flex;">#'+i+'</a></div><div class="col"><a id="'+i+'" class="btn btn-sm btn_remove" style="background-color: #dc3545;padding: 5px;font-size: 12px;border-radius: 5px;">Hapus</a></div></div><div class="row align-items-center"><div class="col"><label>Tanggal</label><input name="jml_cerita" value="'+i+'" type="text" class="form-control" placeholder="Contoh : 14 Januari 2020 " ><input name="tanggal_cerita[]" type="text" class="form-control" placeholder="Contoh : 14 Januari 2020 " ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Judul</label><input name="judul_cerita[]" type="text" class="form-control" placeholder="Contoh : Pertama Bertemu" ></div></div><div class="row align-items-center mt-3"><div class="col"><label>Isi Cerita</label><textarea name="isi_cerita[]" type="text" class="form-control" placeholder="Maximal 500 Karakter" maxlength="500" rows="4" ></textarea></div></div></div>');  
         $(".form-control").prop('',false);
     });
 
@@ -880,7 +780,7 @@
 
     // ============= GALLERY
 
-        var myDropzone = new Dropzone(document.body, { 
+    var myDropzone = new Dropzone(document.body, { 
     url: "<?php echo base_url('admin/update_gallery'); ?>", 
     paramName: "file",
     acceptedFiles: 'image/*',
@@ -896,6 +796,7 @@
 
         }else{
         var aql = JSON.parse(response);
+        console.log('ss');
         $('.dz-preview').remove();
         $("#previewss").prepend('<div id="preview'+aql.no+'" class="file-row preview-uploads"><div class="preview-uploads-img"><span class="preview"><img id="img3" src="<?= base_url() ?>/assets/users/'+aql.kunci+'/album'+aql.no+'.png"  style="height: 100%;object-position: center;object-fit: cover;width: 100%;" /></span></div><div class="preview-uploads-name"><p class="name" style="line-height: revert;font-size: 12px;" data-dz-name>album'+aql.no+'</p><strong class="error text-danger" style="line-height: revert;font-size: 12px;"  ></strong><p class="size" style="line-height: revert;font-size: 12px;" >-</p></div><div  class="preview-uploads-delete"><button id="'+aql.no+'" class="btn btn-danger delete btnhehe">Hapus</button></div></div>');
         }
@@ -995,6 +896,7 @@
         var fotonyasiapa = '';
         $(".file-upload").on("change", function(event) {
             $("#myModal").modal();
+            console.log('ss');
             fotonyasiapa = $(this).attr("id");
             console.log("foto_"+fotonyasiapa);
             /* Initailize croppie instance and assign it to global variable */
