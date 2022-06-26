@@ -1633,8 +1633,8 @@ header {
   display: block;
   position: relative;
   background: #fff;
-  height: 160px;
-  line-height: 160px;
+  height: 120px;
+  line-height: 120px;
   transition: all 0.5s;
 }
 @media only screen and (max-width: 992px) {
@@ -1804,8 +1804,13 @@ header .main-menu nav ul li:last-child a {
 .slider-area .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
   right: 50px;
 }
+.bx-next::before {
+  font-family: "FontAwesome 5";
+  content: "\f101";
+}
 .slider-area .bx-wrapper .bx-controls .bx-controls-direction a.bx-next:before {
-  content: "\f105";
+  font-family: "FontAwesome 5";
+  content: "\f101";
   position: absolute;
   left: 0;
   right: 0;
@@ -1817,7 +1822,6 @@ header .main-menu nav ul li:last-child a {
   color: #111;
   font-size: 18px;
   text-indent: 0px;
-  font-family: "FontAwesome";
   font-weight: 700;
   transition: all 0.5s;
 }

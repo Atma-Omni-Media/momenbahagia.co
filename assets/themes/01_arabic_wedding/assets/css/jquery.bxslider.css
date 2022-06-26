@@ -91,6 +91,10 @@ ul.bxslider {
   line-height: 0;
 }
 /* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-next::before{
+  font-family: "FontAwesome 5";
+  content: "\f101" !important;
+}
 .bx-wrapper .bx-prev {
   left: 10px;
   background: url('images/controls.png') no-repeat 0 -32px;
@@ -99,11 +103,10 @@ ul.bxslider {
 .bx-wrapper .bx-prev:focus {
   background-position: 0 0;
 }
-.bx-wrapper .bx-next {
+.bx-wrapper . {
   right: 10px;
-  background: url('images/controls.png') no-repeat -43px -32px;
 }
-.bx-wrapper .bx-next:hover,
+.bx-wrapper .:hover,
 .bx-wrapper .bx-next:focus {
   background-position: -43px 0;
 }

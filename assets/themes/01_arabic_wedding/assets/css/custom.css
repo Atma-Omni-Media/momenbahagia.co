@@ -1,0 +1,12 @@
+.EventTitle {
+    font-family: "Kaushan Script", cursive;
+    display: block;
+    line-height: 100px;
+    vertical-align: middle;
+}
+.EventTitleFooter {
+    font-family: "Kaushan Script", cursive;
+    display: block;
+    line-height: 150px;
+    vertical-align: middle;
+}
