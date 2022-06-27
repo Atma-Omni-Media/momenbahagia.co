@@ -43,6 +43,11 @@
                 <span>Data Pengguna</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin/add_pengguna'); ?>">
+                <i class="fas fa-fw fa-user-plus"></i>
+                <span>Tambah Pengguna</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin/pembayaran'); ?>">
                 <i class="fas fa-fw fa-money-bill-alt"></i>
                 <span>Data Pembayaran</span></a>
@@ -52,6 +57,7 @@
                 <i class="fas fa-cogs"></i>
                 <span>Setting</span></a>
         </li>
+        
         <hr class="sidebar-divider">
         <div class="version" ><?= SITE_NAME ?> Version 2</div>
     </ul>
