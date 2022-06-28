@@ -126,6 +126,8 @@ if(isset($_SERVER['HTTP_HOST'])){
 	//REDIRECT SEMUA ROUTES TIDAK DIKENAL KE HOME
 	$routes->add('(:any)', 'Beranda');
 
+	//sitemap
+	// $routes->get('sitemap\.xml', 'Sitemap::sitemap_index');
 
 }
 

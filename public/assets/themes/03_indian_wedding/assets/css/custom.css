@@ -1,0 +1,11 @@
+.EventTitle{
+    color: #ffffff;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    line-height: 140px;
+    margin: 0 auto;
+}
+
+header.sticky .EventTitle{
+    line-height: 100px;
+}

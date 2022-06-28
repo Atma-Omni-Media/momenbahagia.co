@@ -39,7 +39,7 @@ class Beranda extends Controller
 	}
 
 	public function demo(){
-
+	
 		$idnya = '1'; //id user khusus demo
 		$temanya = $this->uri->getSegment(3); //get tema
 		$invite = $this->uri->getSegment(4); //get invited user
@@ -57,7 +57,7 @@ class Beranda extends Controller
 			$data['cerita'] = $this->BerandaModel->get_cerita($idnya);
 			$data['album'] = $this->BerandaModel->get_album($idnya);
 			$data['rules'] = $this->BerandaModel->get_rules($idnya);
-
+		
 			return view('undangan/themes/'.$temanya, $data);
 
 		}else{
