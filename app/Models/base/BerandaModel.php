@@ -14,6 +14,7 @@ class BerandaModel extends Model
         //mendefinisikan varible themes
         //dan 'meload' table themes
         $this->themes = $db->table('themes'); 
+        $this->theme_videos = $db->table('theme_videos');
         $this->acara = $db->table('acara');
         $this->cerita = $db->table('cerita');
         $this->data = $db->table('data');
@@ -29,6 +30,11 @@ class BerandaModel extends Model
     //mengambil semua data pada table themes
     public function get_all_themes(){
         return $this->themes->get();
+    }
+
+    //mengambil semua data pada table themes
+    public function get_all_video_theme(){
+        return $this->theme_videos->get();
     }
 
     public function get_themes_by_name($nama){

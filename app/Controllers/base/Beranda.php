@@ -24,6 +24,7 @@ class Beranda extends Controller
 	{
 		//mengambil semua data themes dari BerandaModel
 		$data['tema'] = $this->BerandaModel->get_all_themes();
+		$data['tema_video'] = $this->BerandaModel->get_all_video_theme();
 		//load view home
 		return view('base/beranda/home', $data);
 	}
