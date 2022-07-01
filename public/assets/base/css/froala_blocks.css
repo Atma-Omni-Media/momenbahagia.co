@@ -7,7 +7,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto");
 
 html {
-  
+  scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -1302,7 +1302,7 @@ header + header {
   color: #444444; }
 
 .navbar{
-  background: linear-gradient(to right, #005CAA 0%, #00c6f9 100%) !important;
+    background: linear-gradient(to right, #d39e00 0%, #ffca07 100%) !important;
 }
 
 .konten{
@@ -1327,7 +1327,12 @@ header + header {
 }
 
 .cover{
-  background-image: linear-gradient(to right, #005CAA 0%, #00c6f9 100%) !important;
+  background: #ffffff;
+  background-image: url(../../../assets/base/img/home_cover.png);
+  background-image: url(../../../assets/base/img/home_cover.png), linear-gradient(#dba601, #d1353100);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
   position: relative;
   min-height: 700px;
 }
@@ -1343,7 +1348,7 @@ header + header {
 }
 
 .footer{
-  background: linear-gradient(to right, #005CAA 0%, #00c6f9 100%) !important;
+  background: linear-gradient(to right, #d39e00 0%, #ffc107 100%) !important;
 }
 
 .text-footer{

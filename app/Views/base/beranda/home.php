@@ -246,32 +246,6 @@
               <p class="lead">Tersedia banyak pilihan tema undangan video yang menarik untuk pernikahanmu..</p>
             </div>
           </div>
-            
-          <div class="row">
-            <?php 
-            $i = 1;
-            foreach ($tema_video->getResult() as $row){ ?>
-              <div class="col-lg-3 col-md-6 col-xs-12 mt-5 text-center">
-                <div class="fdb-box p-0">
-                  <!-- <img alt="image" class="img-fluid rounded-0" src="<?php echo base_url() ?>/assets/themes/<?= $row->nama_theme ?>/preview.png"> -->
-                  <video width="200" height="280" controls poster="<?php echo base_url() ?>/assets/themes/videos/images/<?= $row->nama_theme ?>.png">
-                        <source src="<?php echo base_url() ?>/assets/themes/videos/<?= $row->nama_theme ?>.mp4" type="video/mp4">
-                  </video>
-                  <div class="content p-2 d-flex justify-content-center">
-                    <h3><strong><?= $row->nama_theme ?></strong></h3>
-                  </div>
-
-                  <div class="d-flex justify-content-center">
-                    <p class="mt-2 mr-2"><a href="<?= base_url('order/'.$row->kode_theme) ?>" class="btn btn-success btn-sm">Pesan</a></p>  
-                    <p class="mt-2"><a href="<?= base_url('demo/'.$row->nama_theme) ?>" class="btn btn-primary btn-sm">Demo</a></p>
-                  </div>
-                </div>
-              </div>
-            <?php 
-            if ($i++ == 4) break;
-            } 
-            ?>
-          </div>
           
           <div class="row">
             <?php 
