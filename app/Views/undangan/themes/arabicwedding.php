@@ -1,14 +1,25 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+    <?php foreach ($mempelai->getResult() as $row){ ?>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <!--Theme Title-->
-        <title>MomenBahagia Arabic Themes</title>
-        <meta name="description" content="">
-
+        <title><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></title>
+        <meta name="description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:title" content="<?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?>">
+        <meta property="og:description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:url" content="<?php echo base_url() ?>">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="og:type" content="website" />
+        <?php }?>
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
         <link rel="apple-touch-icon" href="favicon.png">
@@ -37,6 +48,15 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    <?php foreach ($data->getResult() as $row){
+        $kunci = $row->kunci;
+		$youtube = $row->video;
+		$salam_pembuka = $row->salam_pembuka;
+		$musiknya = "/assets/users/".$kunci."/musik.mp3";
+		$maps = $row->maps;
+    }
+	?>
+    <audio loop src="<?php echo base_url() ?><?= $musiknya ?>" id="audio" ></audio>
     <body>
       <!-- preloader Start -->
 		<div id="preloader">
@@ -93,21 +113,24 @@
         <!--About wrapper start here-->
         <section section-scroll='1' class="about-area section sectionbg">
             <div class="container">
+                
+	            <?php foreach ($mempelai->getResult() as $row){  ?>
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
                             <p>ARE GETTING MARRIED!</p>
-                            <h2>Groom and Bride</h2>
+                            <h2><?php echo $row->nama_panggilan_wanita; ?> and <?php echo $row->nama_panggilan_wanita; ?></h2>
                         </div>
                     </div>
                 </div>
+            
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="about-list">
-                            <div class="imgs"><figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/about/1.jpg" alt=""/></figure></div>
+                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/bride.png" alt=""/></figure></div>
                             <div class="content">
-                                <h2>Jasmine</h2>
-                                <p>( S/o Mrs. Mustafa & Mr. jany )</p>
+                                <h2><?php echo $row->nama_wanita; ?></h2>
+                                <p>( <?php echo "Putri ".$row->nama_ayah_wanita . " dan " .$row->nama_ibu_wanita  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -116,25 +139,35 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <!-- ============== ACARA =============== -->
+                    <?php 
+                    
+                    foreach ($acara->getResult() as $row){ 
+                        $tanggal_akad =  $row->tanggal_akad;
+                        $tanggal_resepsi =  $row->tanggal_resepsi;
+                    ?>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="about-invitation">
                             <div class="content">
                                 <h2 class="wow animated fadeInUp" data-wow-duration="1s">Invitation</h2>
                                 <p class="wow animated fadeInUp" data-wow-duration="1.3s">We inviting you and <br>your family on</p>
-                                <strong class="wow animated fadeInUp" data-wow-duration="1.6s">Saturday<br>20 May 2018</strong>
-                                <span class="wow animated fadeInUp" data-wow-duration="1.9s">At St. Thomas's Church,<br>London, U.K.</span>
+                                <strong class="wow animated fadeInUp" data-wow-duration="1.6s"><?php echo $row->tanggal_resepsi; ?></strong>
+                                <span class="wow animated fadeInUp" data-wow-duration="1.9s"><?php echo $row->tempat_resepsi; ?><br><?php echo $row->alamat_resepsi; ?></span>
                             </div>
                             <div class="btn-rspd mr-t30">
                                 <a href="#" class="btn1">Rsvp</a>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="about-list">
-                            <div class="imgs"><figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/about/2.jpg" alt=""/></figure></div>
+                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/groom.png" alt=""/></figure></div>
                             <div class="content">
-                                <h2>Hussain</h2>
-                                <p>( S/o Mrs. Mustafa & Mr. jany )</p>
+                                <h2><?php echo $row->nama_pria; ?></h2>
+                                <p>( <?php echo "Putra ".$row->nama_ayah_pria . " dan " .$row->nama_ibu_pria  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -144,6 +177,7 @@
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
         <!--About wrapper end here-->
@@ -357,13 +391,19 @@
                         </div>
                     </div>
                 </div>
+                <?php 
+	
+                foreach ($acara->getResult() as $row){ 
+                    $tanggal_akad =  $row->tanggal_akad;
+                    $tanggal_resepsi =  $row->tanggal_resepsi;
+                ?>
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <div class="event-infobox">
-                            <h2>Main Ceremony</h2>
-                            <h1>7:30 pm</h1>
-                            <span>St. Thomas's<br>Church, London, U.K.</span>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. Aenean sollicitudin, lorem quis <a href="#">Read More...</a></p>
+                            <h2>Akad Nikah</h2>
+                            <h1><?php echo $row->jam_akad; ?></h1>
+                            <span><?php echo $row->tempat_akad; ?><br><?php echo $row->alamat_akad; ?></span>
+                            <!-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. Aenean sollicitudin, lorem quis <a href="#">Read More...</a></p> -->
                             <div class="clearfix"></div>
                             <a href="#" class="btgbtn"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/icons/map.png" alt="Map" class="img-responsive"></a>
                         </div>
@@ -375,15 +415,16 @@
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <div class="event-infobox">
-                            <h2>Wedding Party</h2>
-                            <h1>7:30 pm</h1>
-                            <span>St. Thomas's<br>Church, London, U.K.</span>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. Aenean sollicitudin, lorem quis <a href="#">Read More...</a></p>
+                            <h2>Resepsi</h2>
+                            <h1><?php echo $row->jam_resepsi; ?></h1>
+                            <span><?php echo $row->tempat_resepsi; ?><br><?php echo $row->alamat_resepsi; ?></span>
+                            <!-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. Aenean sollicitudin, lorem quis <a href="#">Read More...</a></p> -->
                             <div class="clearfix"></div>
                             <a href="#" class="btgbtn"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/icons/map.png" alt="Map" class="img-responsive"></a>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
         <!--Event wrapper End here-->
@@ -482,96 +523,14 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 pd-0">
                         <div class="gallery-slider">
+                        <?php  foreach($album as $key => $data) {  ?>
                             <div class="col-sm-12">
                                 <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg"><img src="assets/images/gallery/1.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
+                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg"><img src="<?php echo base_url() ?>/assets/users/<?php echo $kunci.'/'.$data['album']; ?>.png" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
                                 </div>
                             </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/2.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/3.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/4.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/5.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/6.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/7.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                                <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/8.jpg" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
-                                </div>
-                            </div>
+                            
+                        <?php } ?>
                         </div>
                     </div>
                 </div>
