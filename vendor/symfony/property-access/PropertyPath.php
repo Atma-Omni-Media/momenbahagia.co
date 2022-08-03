@@ -19,18 +19,20 @@ use Symfony\Component\PropertyAccess\Exception\OutOfBoundsException;
  * Default implementation of {@link PropertyPathInterface}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
+ *
+ * @implements \IteratorAggregate<int, string>
  */
 class PropertyPath implements \IteratorAggregate, PropertyPathInterface
 {
     /**
      * Character used for separating between plural and singular of an element.
      */
-    const SINGULAR_SEPARATOR = '|';
+    public const SINGULAR_SEPARATOR = '|';
 
     /**
      * The elements of the property path.
      *
-     * @var array
+     * @var list<string>
      */
     private $elements = [];
 
@@ -154,6 +156,7 @@ class PropertyPath implements \IteratorAggregate, PropertyPathInterface
      *
      * @return PropertyPathIteratorInterface
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new PropertyPathIterator($this);
