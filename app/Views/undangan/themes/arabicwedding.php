@@ -118,7 +118,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
                             <p>ARE GETTING MARRIED!</p>
-                            <h2><?php echo $row->nama_panggilan_wanita; ?> and <?php echo $row->nama_panggilan_wanita; ?></h2>
+                            <h2><?php echo $row->nama_panggilan_wanita; ?> and <?php echo $row->nama_panggilan_pria; ?></h2>
                         </div>
                     </div>
                 </div>

@@ -64,7 +64,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="logo-area">
                             <div class="content">
-                                <h2><?php echo $row->nama_panggilan_pria ?> & <?php echo $row->nama_panggilan_wanita ?></h2>
+                                <h2><?php echo $row->nama_panggilan_wanita ?> & <?php echo $row->nama_panggilan_pria ?></h2>
                                 <p>ARE GETTING MARRIED!</p>
                             </div>
                         </div>

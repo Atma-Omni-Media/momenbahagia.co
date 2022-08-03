@@ -200,7 +200,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
-                            <h2><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></h2>
+                            <h2><?php echo $row->nama_panggilan_wanita." & ".$row->nama_panggilan_pria; ?></h2>
                             <p>Are Getting Merrid</p>
                             <div class="date">
                                 <span>Save the Date</span>

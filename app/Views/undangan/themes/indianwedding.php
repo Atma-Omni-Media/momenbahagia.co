@@ -147,7 +147,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-8">
                         <div class="logo">
                             <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt=""/></a> -->
-                            <h2 class="EventTitle"><em><?php echo $row->nama_panggilan_pria ?> & <?php echo $row->nama_panggilan_wanita ?></em></h2>
+                            <h2 class="EventTitle"><em><?php echo $row->nama_panggilan_wanita ?> & <?php echo $row->nama_panggilan_pria ?></em></h2>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 hidden-xs">
