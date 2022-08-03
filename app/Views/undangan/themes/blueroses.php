@@ -108,7 +108,7 @@
             
 			<tr>
                 <th style="position: relative;text-align: center;display:block;margin-top:40px">
-					<img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/kita.png" class="cover-foto"/>
+					<img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/kita.png" class="cover-foto"/>
 					
 					<!-- image border cover -->
                     <img src="<?= base_url() ?>/assets/themes/blueroses/img/bg-flower.png" class="cover-border" /><br>

@@ -112,7 +112,7 @@
                     <img src="<?= base_url() ?>/assets/themes/radiantdark/img/bg_flower.png" class="cover-border" /><br>
 					<!-- image border cover -->
 
-					<img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/kita.png" class="cover-foto"/>
+					<img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/kita.png" class="cover-foto"/>
 
                 </th>
             </tr>
