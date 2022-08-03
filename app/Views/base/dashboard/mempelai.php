@@ -32,10 +32,10 @@ $(function(){
         </div>
     </div> 
     <?php 
-        $kunci = $data[0]->kunci;
-        $fotogroom = "/assets/users/".$kunci."/groom.png";
-        $fotobride = "/assets/users/".$kunci."/bride.png";
-        $fotosampul = "/assets/users/".$kunci."/kita.png";
+        $kunci = $mempelai[0]->key_image;
+        $fotogroom = "/assets/users/".$mempelai[0]->key_image."/groom.png";
+        $fotobride = "/assets/users/".$mempelai[0]->key_image."/bride.png";
+        $fotosampul = "/assets/users/".$mempelai[0]->key_image."/kita.png";
     ?>
 
     <div class="row mb-3">

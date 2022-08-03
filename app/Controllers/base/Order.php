@@ -539,7 +539,7 @@ class Order extends Controller
 	 	$nama_panggilan_wanita = $this->session->get('nama_panggilan_wanita');
 	 	$nama_ibu_wanita = $this->session->get('nama_ibu_wanita');
 	 	$nama_ayah_wanita = $this->session->get('nama_ayah_wanita');
-		 
+		$key_image = $this->session->get('dummy');
 	 	$dataMempelai = [
 	 		'id_user' => $id_user,
 	 		'nama_pria' => $nama_lengkap_pria,
@@ -550,6 +550,7 @@ class Order extends Controller
 	 		'nama_panggilan_wanita' => $nama_panggilan_wanita,
 	 		'nama_ibu_wanita' => $nama_ibu_wanita,
 	 		'nama_ayah_wanita' => $nama_ayah_wanita,
+			'key_image' => $key_image,
 	 	];
 
 
@@ -625,7 +626,8 @@ class Order extends Controller
 		      if(!file_exists($pathName))continue;
 		      $dataAlbum = [
 		      	'id_user' => $id_user,
-		      	'album' => 'album'.$a
+		      	'album' => 'album'.$a,
+				'key_image' => $generate
 
 		      ];
 

@@ -201,6 +201,7 @@ class Dashboard extends Controller
         $data['order'] = $this->DashboardModel->get_order_by_id_user();
         $data['title'] = 'Data Mempelai';
         $data['view'] = 'base/dashboard/mempelai';
+        
 		return view('base/dashboard/layout', $data);
     }
 

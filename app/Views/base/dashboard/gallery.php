@@ -62,7 +62,7 @@ $(function(){
                     </div>
                     <div id="previewss">
                         <?php 
-                            $kunci = $data[0]->kunci;
+                            $kunci = $album[0]->key_image;
                             for($a=1;$a<=10;$a++){
                                 $pathName = 'assets/users/'.$kunci.'/album'.$a.'.png';
                                 if(!file_exists($pathName))continue;
