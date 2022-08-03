@@ -71,7 +71,7 @@
                     <div class="col-md-4 col-sm-3 col-xs-10">
                         <div class="logo">
                             <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt=""/></a> -->
-                            <h1 class="EventTitle">Suci&Trisna</h1>
+                            <h1 class="EventTitle"><?php echo $row->nama_panggilan_wanita; ?>&<?php echo $row->nama_panggilan_pria; ?></h1>
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-9 hidden-xs">
@@ -127,10 +127,10 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="about-list">
-                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/bride.png" alt=""/></figure></div>
+                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/bride.png" alt=""/></figure></div>
                             <div class="content">
                                 <h2><?php echo $row->nama_wanita; ?></h2>
-                                <p>( <?php echo "Putri ".$row->nama_ayah_wanita . " dan " .$row->nama_ibu_wanita  ?> )</p>
+                                <p>( <?php echo "Putri ".$row->nama_ayah_wanita . " & " .$row->nama_ibu_wanita  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -164,10 +164,10 @@
                     <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="about-list">
-                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/groom.png" alt=""/></figure></div>
+                            <div class="imgs"><figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/groom.png" alt=""/></figure></div>
                             <div class="content">
                                 <h2><?php echo $row->nama_pria; ?></h2>
-                                <p>( <?php echo "Putra ".$row->nama_ayah_pria . " dan " .$row->nama_ibu_pria  ?> )</p>
+                                <p>( <?php echo "Putra ".$row->nama_ayah_pria . " & " .$row->nama_ibu_pria  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -205,180 +205,6 @@
         </section>
         <!--Counter wrapper End here-->
         <!--Family wrapper start here-->
-        <section class="family-area section bg-img jarallax af">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="section-heading">
-                            <p>most imp. persons</p>
-                            <h2>Lovable Family</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="family-tabbox">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#groom" aria-controls="groom" role="tab" data-toggle="tab"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/sm-1.jpg" alt="Groom"><p>Jasmine</p></a></li>
-                                <li role="presentation"><a href="#bride" aria-controls="bride" role="tab" data-toggle="tab"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/sm-2.jpg" alt="Bride"><p>Hussain</p></a></li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade in active" id="groom">
-                                    <div class="familyslider">
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/1.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/2.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/3.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/4.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/1.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="bride">
-                                    <div class="familyslider">
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/1.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/2.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/3.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/4.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="familyinfo">
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/family/1.jpg" alt=""/></figure>
-                                                <div class="content">
-                                                    <h2>Mr. Husbain malik</h2>
-                                                    <p>(Hussain’s Father)</p>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!--Family wrapper end here-->
         <!--Event wrapper start here-->
         <section section-scroll='2' class="event-area section sectionbg">
@@ -429,61 +255,6 @@
         </section>
         <!--Event wrapper End here-->
         <!--Invitation wrapper start here-->
-        <section class="invitation-area section bg-img af jarallax">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="section-heading">
-                            <p>Invitation</p>
-                            <h2>Be our guest!</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10 col-sm-12 col-md-offset-1">
-                        <div class="inviting-con">
-                            <h2>You’re Invited <span>Jenny & Mark</span> Wedding</h2>
-                            <h4>Please Rsvp Before 15 May 2017</h4>
-                            <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-sm-12 col-md-offset-1">
-                        <div class="gift">
-                            <h1>Gift Registry</h1>
-                            <div class="gift-slider">
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/1.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/2.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/3.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/4.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/5.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/6.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/7.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/8.png" alt=""/></a>
-                                </div>
-                                <div class="gift-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gift/9.png" alt=""/></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!--Invitation wrapper end here-->
         <!--Testimonial wrapper start here-->
         <section class="testimonial-srea section">
@@ -526,7 +297,7 @@
                         <?php  foreach($album as $key => $data) {  ?>
                             <div class="col-sm-12">
                                 <div class="glist">
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/gallery/1.jpg"><img src="<?php echo base_url() ?>/assets/users/<?php echo $kunci.'/'.$data['album']; ?>.png" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
+                                    <figure><a href="<?php echo base_url() ?>/assets/users/<?php echo $key->key_image.'/'.$data['album'] ?>.png"><img src="<?php echo base_url() ?>/assets/users/<?php echo $row->key_image.'/'.$data['album']; ?>.png" alt=""/><span><i class="fas fa-search"></i></span></a></figure>
                                 </div>
                             </div>
                             
@@ -627,7 +398,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
-                            <p>Jenny & Mark</p>
+                            <p><?php echo $row->nama_panggilan_pria ?> & <?php echo $row->nama_panggilan_wanita ?></p>
                             <h2>Our true love story</h2>
                         </div>
                     </div>
@@ -636,73 +407,30 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="love-story">
                             <div class="top-btn text-center mr-b50">
-                                <a href="#" class="btn1">2015</a>
+                                <a href="#" class="btn1"></a>
                             </div>
                             <div class="story-list">
                                 <div class="col-md-6 col-sm-12 pd-0">
                                     <div class="story lefts">
+                                    <?php 
+                                        $no=0;
+                                        foreach($cerita as $key => $data) { 
+                                            $no++;
+                                            if($no % 2 == 0){ ?>
                                         <div class="storys">
                                             <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/story/1.jpg" alt=""/></figure>
                                             <div class="content">
-                                                <span>20 May 2015</span>
-                                                <h3>Our First Met</h3>
-                                                <h4>That day changed Life</h4>
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
+                                                <span><?php echo $data['tanggal_cerita']; ?></span>
+                                                <h3><?php echo $data['judul_cerita']; ?></h3>
+                                                <p><?php echo $data['isi_cerita']; ?>.</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="story lefts">
-                                        <div class="storys">
-                                            <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/story/3.jpg" alt=""/></figure>
-                                            <div class="content">
-                                                <span>20 May 2015</span>
-                                                <h3>Our First Met</h3>
-                                                <h4>That day changed Life</h4>
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="story lefts">
-                                        <div class="storys">
-                                            <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/story/5.jpg" alt=""/></figure>
-                                            <div class="content">
-                                                <span>20 May 2015</span>
-                                                <h3>Our First Met</h3>
-                                                <h4>That day changed Life</h4>
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 pd-0">
-                                    <div class="story rights first">
-                                        <div class="storys">
-                                            <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/story/2.jpg" alt=""/></figure>
-                                            <div class="content">
-                                                <span>20 May 2015</span>
-                                                <h3>Our First Met</h3>
-                                                <h4>That day changed Life</h4>
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="story rights">
-                                        <div class="storys">
-                                            <figure><img src="<?php echo base_url() ?>/assets/themes/01_arabic_wedding/assets/images/story/4.jpg" alt=""/></figure>
-                                            <div class="content">
-                                                <span>20 May 2015</span>
-                                                <h3>Our First Met</h3>
-                                                <h4>That day changed Life</h4>
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
+                                    <?php } ?> 
                                 </div>
                             </div>
                             <div class="clearfix"></div>
-                            <div class="bottom-btn text-center mr-t50">
-                                <a href="#" class="btn1">2017</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -715,51 +443,16 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
-                            <p>RSVP Here</p>
-                            <h2>Are You Attending?</h2>
+                            <p>MAPS</p>
+                            <h2>Location</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
 			
                     <div class="col-md-8 col-sm-12 col-md-offset-2">
-                        <div class="rspv-form">
-                            <form>
-                                <div class="col-sm-6 pd-l0">
-                                    <fieldset><input type="text" name="full_name" placeholder="Name" class="require"></fieldset>
-                                    <fieldset><input type="email" name="email" placeholder="Email" class="require" data-valid="email" data-error="Email should be valid."></fieldset>
-                                    <fieldset>
-                                        <select name="guest_no" class="require">
-                                            <option>Guest</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                        </select>
-                                    </fieldset>
-                                </div>
-                                <div class="col-sm-6 pd-r0">
-                                    <fieldset>
-                                        <select name="event_name" class="require">
-                                            <option>All Event</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                        </select>
-                                    </fieldset>
-                                    <fieldset>
-                                        <textarea placeholder="Message"></textarea>
-                                    </fieldset>
-                                </div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="response"></div>
-							</div>
-                                <div class="col-sm-12">
-                                    <div class="rspbbtn">
-                                       <button type="button" class="submitForm btn1" form-type="inquiry">Send a Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <?= $maps ?>
+                                                
                     </div>
                 </div>
             </div>
@@ -776,7 +469,7 @@
                             </div>
                             <div class="content">
                                 <h2>Home</h2>
-                                <p>110, B Kalani Bagh, Dewas <br>M.P. INDIA #455001</p>
+                                <p>Jakarta</p>
                             </div>
                         </div>
                     </div>
@@ -787,7 +480,7 @@
                             </div>
                             <div class="content">
                                 <h2>Phone</h2>
-                                <p>+ 91 90980 85819<br>+91 98272 55866</p>
+                                <p>0878-8700-5722</p>
                             </div>
                         </div>
                     </div>
@@ -798,7 +491,7 @@
                             </div>
                             <div class="content">
                                 <h2>Email Us</h2>
-                                <p>halomomenbahagia@gmail.com<br>halomomenbahagia@gmail.com</p>
+                                <p>halomomenbahagia@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -813,7 +506,7 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="foo-logo">
                             <!-- <a href="index.html"><img src="assets/images/logo/logo2.png" alt=""/></a> -->
-                            <h1 class="EventTitleFooter">Suci&Trisna</h6>
+                            <h1 class="EventTitleFooter"><?php echo $row->nama_panggilan_pria ?> ?>&<?php echo $row->nama_panggilan_wanita ?></h6>
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-8">

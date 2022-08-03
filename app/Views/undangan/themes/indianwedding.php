@@ -3,15 +3,26 @@
 <html class="no-js" lang="en">
 
     <head>
-
+    <?php foreach ($mempelai->getResult() as $row){ ?>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <!--Theme Title-->
-        <title>MomenBahagia India Themes</title>
-        <meta name="description" content="">
-        <!-- Place favicon.ico in the root directory -->
+        <title><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></title>
+        <meta name="description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:title" content="<?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?>">
+        <meta property="og:description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:url" content="<?php echo base_url() ?>">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="og:type" content="website" />
+        <?php }?>
+            <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
         <link rel="apple-touch-icon" href="favicon.png">
 		<!-- All css Here -->
@@ -33,6 +44,14 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    <?php foreach ($data->getResult() as $row){
+        $kunci = $row->kunci;
+		$youtube = $row->video;
+		$salam_pembuka = $row->salam_pembuka;
+		$musiknya = "/assets/users/".$kunci."/musik.mp3";
+		$maps = $row->maps;
+    }
+	?>
     <body>
 
        <!-- preloader Start -->
@@ -129,7 +148,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-8">
                         <div class="logo">
                             <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt=""/></a> -->
-                            <h2 class="EventTitle"><em>Suci & Trisna</em></h2>
+                            <h2 class="EventTitle"><em><?php echo $row->nama_panggilan_pria ?> & <?php echo $row->nama_panggilan_wanita ?></em></h2>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 hidden-xs">
@@ -175,13 +194,13 @@
         <section  section-scroll='1' class="about_area section section-bg">
             <div class="container">
                 <div class="row">
+                <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="persons">
-                            <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/about/1.jpg" alt=""/></figure>
+                            <figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/groom.png" alt=""/></figure>
                             <div class="content">
-                                <h2><span>Manshi</span> Solanki</h2>
-                                <p>( S/o Mrs. Prakash & Mr. Shanti )</p>
-                                <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit</p>
+                                <h2><span><?php echo $row->nama_wanita; ?></span></h2>
+                                <p>( <?php echo "Putri ".$row->nama_ayah_wanita . " & " .$row->nama_ibu_wanita  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -190,25 +209,32 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php 
+                    
+                    foreach ($acara->getResult() as $row){ 
+                        $tanggal_akad =  $row->tanggal_akad;
+                        $tanggal_resepsi =  $row->tanggal_resepsi;
+                    ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="about-con">
                             <h2>Invitation</h2>
                             <p>We inviting you and<br>your family on</p>
-                            <span>Saturday</span>
-                            <h3>29 Jan 2018</h3>
-                            <p>At St. Thomas's Church,<br>London, U.K.</p>
+                            <h3><?php echo $row->tanggal_resepsi; ?></h3>
+                            <p><?php echo $row->tempat_resepsi; ?>,<br><?php echo $row->alamat_resepsi; ?></p>
                         </div>
                         <div class="con-img mr-t60">
                             <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/about/sm-1.jpg" alt=""/></figure>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="persons">
-                            <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/about/2.jpg" alt=""/></figure>
+                        <figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/bride.png" alt=""/></figure>
                             <div class="content">
-                                <h2><span>Harun</span> Gupta</h2>
-                                <p>( S/o Mrs. Prakash & Mr. Shanti )</p>
-                                <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit</p>
+                                <h2><span><?php echo $row->nama_pria; ?></span></h2>
+                                <p>( <?php echo "Putri ".$row->nama_ayah_pria . " & " .$row->nama_ibu_pria  ?> )</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -217,6 +243,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </section>
@@ -257,13 +284,19 @@
                         </div>
                     </div>
                 </div>
+                <?php 
+	
+                    foreach ($acara->getResult() as $row){ 
+                    $tanggal_akad =  $row->tanggal_akad;
+                    $tanggal_resepsi =  $row->tanggal_resepsi;
+                    ?>
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="events">
-                            <h2><span>Main</span> Ceremony</h2>
-                            <button>4:30 pm</button>
-                            <h4>St. Thomas's<br>Church, London, U.K.</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. <a href="#">Read More...</a></p>
+                            <h2><span>Akad</span>Nikah</h2>
+                            <button><?php echo $row->jam_akad ?></button>
+                            <h4><?php echo $row->tempat_akad ?></h4>
+                            <p><?php echo $row->alamat_akad ?></p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -276,66 +309,16 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="events">
-                            <h2><span>Main</span> Ceremony</h2>
-                            <button>4:30 pm</button>
-                            <h4>St. Thomas's<br>Church, London, U.K.</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. <a href="#">Read More...</a></p>
+                        <h2><span>Akad</span>Nikah</h2>
+                            <button><?php echo $row->jam_resepsi ?></button>
+                            <h4><?php echo $row->tempat_resepsi ?></h4>
+                            <p><?php echo $row->alamat_resepsi ?></p>
                         </div>
 
                     </div>
-
-                    <div class="col-md-4 col-sm-6">
-
-                        <div class="events">
-
-                            <h2><span>Main</span> Ceremony</h2>
-
-                            <button>4:30 pm</button>
-
-                            <h4>St. Thomas's<br>Church, London, U.K.</h4>
-
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. <a href="#">Read More...</a></p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-
-                        <div class="events">
-
-                            <h2><span>Main</span> Ceremony</h2>
-
-                            <button>4:30 pm</button>
-
-                            <h4>St. Thomas's<br>Church, London, U.K.</h4>
-
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. <a href="#">Read More...</a></p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-
-                        <div class="events">
-
-                            <h2><span>Main</span> Ceremony</h2>
-
-                            <button>4:30 pm</button>
-
-                            <h4>St. Thomas's<br>Church, London, U.K.</h4>
-
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor vel velit auctor aliquet. <a href="#">Read More...</a></p>
-
-                        </div>
-
-                    </div>
-
-
 
                 </div>
-
+                <?php } ?>
             </div>
 
         </section>
@@ -366,230 +349,17 @@
                     <div class="col-md-3 col-sm-12 col-xs-12 pd-0">
                         
                         <div class="col-md-12 col-sm-6 col-xs-12">
-
+                        <?php  foreach($album as $key => $data) {  ?>
                             <div class="gallery">
 
                                 <figure>
 
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/1.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/1.jpg" alt=""/></a>
+                                    <a href="<?php echo base_url() ?>/assets/users/<?php echo $key->key_image.'/'.$data['album'] ?>.png"><span><i class="fas fa-search"></i></span><img src="<?php echo base_url() ?>/assets/users/<?php echo $key->key_image.'/'.$data['album'] ?>.png" alt=""/></a>
 
                                 </figure>
 
                             </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/2.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/2.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/3.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/3.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/4.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/4.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12 pd-0">
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/5.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/5.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/6.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/6.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/7.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/7.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/8.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/8.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12 pd-0">
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/9.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/9.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/10.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/10.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/11.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/11.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/12.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/12.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12 pd-0">
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/13.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/13.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/14.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/14.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/15.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/15.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-
-                            <div class="gallery">
-
-                                <figure>
-
-                                    <a href="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/gallery/16.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/16.jpg" alt=""/></a>
-
-                                </figure>
-
-                            </div>
-
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -602,107 +372,6 @@
         <!--Gallery area end here-->
 
         <!--Registry area start here-->
-
-        <section class="registry-area section section-bg">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="sec-heding">
-
-                            <h3>Gift Registry</h3>
-
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis</p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-10 col-sm-12 col-md-offset-1">
-
-                        <div class="registry_slider">
-
-                            <div class="col-sm-12">
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/1.jpg" alt=""/></a>
-
-                                </div>
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/2.jpg" alt=""/></a>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">   
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/3.jpg" alt=""/></a>
-
-                                </div>
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/1.jpg" alt=""/></a>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/2.jpg" alt=""/></a>
-
-                                </div>
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/1.jpg" alt=""/></a>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/3.jpg" alt=""/></a>
-
-                                </div>
-
-                                <div class="registry-list">
-
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/brand/2.jpg" alt=""/></a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
         <!--Registry area end here-->
 
         <!--Banner area start here-->
@@ -760,113 +429,32 @@
                             <div class="story-list">
 
                                 <div class="col-sm-6 pd-0">
-
+                                    
+                                <?php 
+                                        $no=0;
+                                        foreach($cerita as $key => $data) { 
+                                            $no++;
+                                            if($no % 2 == 0){ ?>
                                     <div class="story lefts">
 
                                         <div class="storys">
 
-                                            <figure><span>20 May 2015</span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/1.jpg" alt=""/></figure>
+                                            <figure><span><?php echo $data['tanggal_cerita']; ?></span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/1.jpg" alt=""/></figure>
 
                                             <div class="content">
 
-                                                <h3>Our First Met</h3>
+                                                <h3><?php echo $data['judul_cerita']; ?></h3>
 
-                                                <h4>That day changed Life</h4>
-
-                                                <p>lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed oio sit amet nibh vulputate.</p>
+                                                <p><?php echo $data['isi_cerita']; ?></p>
 
                                             </div>
 
                                         </div>
 
                                     </div>
-
-                                    <div class="story lefts">
-
-                                        <div class="storys">
-
-                                            <figure><span>20 May 2015</span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/3.jpg" alt=""/></figure>
-
-                                            <div class="content">
-
-                                                <h3>Our First Met</h3>
-
-                                                <h4>That day changed Life</h4>
-
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="story lefts">
-
-                                        <div class="storys">
-
-                                            <figure><span>20 May 2015</span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/5.jpg" alt=""/></figure>
-
-                                            <div class="content">
-
-                                                <h3>Our First Met</h3>
-
-                                                <h4>That day changed Life</h4>
-
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
+                                    <?php }} ?>
 
                                 </div>
-
-                                <div class="col-sm-6 pd-0">
-
-                                    <div class="story rights first">
-
-                                        <div class="storys">
-
-                                            <figure><span>20 May 2015</span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/2.jpg" alt=""/></figure>
-
-                                            <div class="content">
-
-                                                <h3>Our First Met</h3>
-
-                                                <h4>That day changed Life</h4>
-
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="story rights">
-
-                                        <div class="storys">
-
-                                            <figure><span>20 May 2015</span><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/story/4.jpg" alt=""/></figure>
-
-                                            <div class="content">
-
-                                                <h3>Our First Met</h3>
-
-                                                <h4>That day changed Life</h4>
-
-                                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean soin, lorem quis bibendum aucr akshay handge..</p>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
                             </div>
 
                             <div class="clear"></div>
@@ -885,518 +473,12 @@
 
         <!--Family wrapper start here-->
 
-        <section section-scroll='4' class="family-area section bg-img jarallax af">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="section-heading">
-
-                            <h2>Lovable Family</h2>
-
-                        </div>
-
-                    </div> 
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="family-tabbox">
-
-                            <!-- Nav tabs -->
-
-                            <ul class="nav nav-tabs" role="tablist">
-
-                                <li role="presentation" class="active"><a href="#groom" aria-controls="groom" role="tab" data-toggle="tab"><img src="assets/images/family/sm-1.jpg" alt="Groom"></a></li>
-
-                                <li role="presentation"><a href="#bride" aria-controls="bride" role="tab" data-toggle="tab"><img src="assets/images/family/sm-2.jpg" alt="Bride"></a></li>
-
-                            </ul>
-
-                            <!-- Tab panes -->
-
-                            <div class="tab-content">
-
-                                <div role="tabpanel" class="tab-pane fade in active" id="groom">
-
-                                    <div class="familyslider">
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/2.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/3.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/4.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div role="tabpanel" class="tab-pane fade" id="bride">
-
-                                    <div class="familyslider">
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/2.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/3.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/4.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                    <ul>
-
-                                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
+        
         <!--Family wrapper end here-->
 
         <!--Blog wrapper start here-->
 
-        <section section-scroll='6' class="blog-area section section-bg">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="section-heading">
-
-                            <h2>Blog Post</h2>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="blogs">
-
-                            <div class="col-md-6 col-sm-12 pd-0">
-
-                                <div class="blog-img">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/blog/1.jpg" alt=""/></figure>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6 col-sm-12 pd-0">
-
-                                <div class="blog-content">
-
-                                    <h2>Planning Honeymoon Trip</h2>
-
-                                    <ul>
-
-                                        <li><i class="far fa-calendar"></i><span>20 May 2017</span></li>
-
-                                        <li><i class="fas fa-eye"></i><span>240 View</span></li>
-
-                                        <li><i class="fas fa-heart"></i><span>143 Likes</span></li>
-
-                                    </ul>
-
-                                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
-
-                                    <a href="#" class="btn1">read more</a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="blogs">
-
-                            <div class="col-md-6 col-sm-12 pd-0 floatright">
-
-                                <div class="blog-img">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/blog/2.jpg" alt=""/></figure>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6 col-sm-12 pd-0">
-
-                                <div class="blog-content">
-
-                                    <h2>Planning Honeymoon Trip</h2>
-
-                                    <ul>
-
-                                        <li><i class="far fa-calendar"></i><span>20 May 2017</span></li>
-
-                                        <li><i class="fas fa-eye"></i><span>240 View</span></li>
-
-                                        <li><i class="fas fa-heart"></i><span>143 Likes</span></li>
-
-                                    </ul>
-
-                                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
-
-                                    <a href="#" class="btn1">read more</a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="blogs">
-
-                            <div class="col-md-6 col-sm-12 pd-0">
-
-                                <div class="blog-img">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/blog/3.jpg" alt=""/></figure>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6 col-sm-12 pd-0">
-
-                                <div class="blog-content">
-
-                                    <h2>Planning Honeymoon Trip</h2>
-
-                                    <ul>
-
-                                        <li><i class="far fa-calendar"></i><span>20 May 2017</span></li>
-
-                                        <li><i class="fas fa-eye"></i><span>240 View</span></li>
-
-                                        <li><i class="fas fa-heart"></i><span>143 Likes</span></li>
-
-                                    </ul>
-
-                                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
-
-                                    <a href="#" class="btn1">read more</a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="blog-btn">
-
-                            <a href="#" class="btn1">View All</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
+        
         <!--Blog wrapper end here-->
 
         <!--Rspv area start here-->
@@ -1577,8 +659,7 @@
 
                         <div id="map_wrapper">
 
-                            <div id="map_canvas" style="width:100%; height:420px;"></div>
-
+                        <?= $maps ?>
                         </div>
 
                     </div>
@@ -1593,10 +674,9 @@
 
                                 <div class="info-content">
 
-                                    <h2>Location</h2>
-
-                                    <p>512 Ram Nagar, Dewas Madhya Predesh #455001 INDIA</p>
-
+                                <h2>Home</h2>
+                                <p>Jakarta</p>
+                           
                                 </div>
 
                             </div>
@@ -1606,10 +686,8 @@
                                 <div class="info-ico"><img src="<?php echo base_url() ?>/assets/themes/03_indian_wedding/assets/images/icons/3.png" alt=""/></div>
 
                                 <div class="info-content">
-
-                                    <h2>Email</h2>
-
-                                    <p>dummy148@gmail.com<br>example144875@yahoo.com</p>
+                                <h2>Email Us</h2>
+                                <p>halomomenbahagia@gmail.com</p>
 
                                 </div>
 
@@ -1621,10 +699,9 @@
 
                                 <div class="info-content">
 
-                                    <h2>Phone</h2>
-
-                                    <p>+1800-123-923<br>+91 975-789-789</p>
-
+                                <h2>Phone</h2>
+                                <p>0878-8700-5722</p>
+                            
                                 </div>
 
                             </div>
@@ -1659,7 +736,7 @@
 
                         <div class="copyright">
 
-                            <p>Copyright 2017-18 All Right Reserved - Design by Webstrot</p>
+                        <p>@ Copyright 2017 All Rights Reserved. By MomenBahagia.co</p>
 
                         </div>
 

@@ -3,12 +3,25 @@
 <html class="no-js" lang="en">
 
     <head>
+    <?php foreach ($mempelai->getResult() as $row){ ?>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!--Theme Title-->
-        <title>MomenBahagia Fall Themes</title>
-        <meta name="description" content="">
+        <title><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></title>
+        <meta name="description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:title" content="<?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?>">
+        <meta property="og:description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:url" content="<?php echo base_url() ?>">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="og:type" content="website" />
+        <?php }?>
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
         <link rel="apple-touch-icon" href="favicon.png">
@@ -32,6 +45,14 @@
         <![endif]-->
 
     </head>
+    <?php foreach ($data->getResult() as $row){
+        $kunci = $row->kunci;
+		$youtube = $row->video;
+		$salam_pembuka = $row->salam_pembuka;
+		$musiknya = "/assets/users/".$kunci."/musik.mp3";
+		$maps = $row->maps;
+    }
+	?>
     <body>
 
        <!-- preloader Start -->
@@ -47,7 +68,7 @@
                         <div class="main-menus">
                             <div class="col-md-3 col-sm-3 col-xs-12 pd-0">
                                 <div class="logo">
-                                  <a href="index.html"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/logo/logo.png" alt=""/></a>
+                                  <a href="index.html"><h1><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></h1></a>
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 pd-0 hidden-xs">
@@ -180,7 +201,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="section-heading">
-                            <h2>Jhon & Alisa</h2>
+                            <h2><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></h2>
                             <p>Are Getting Merrid</p>
                             <div class="date">
                                 <span>Save the Date</span>
@@ -189,13 +210,14 @@
                         </div>
                     </div>
                 </div>
-
+                 
                 <div class="row">
+                    <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="person">
-                            <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/about/1.jpg" alt=""/></figure>
+                            <figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/grom.png" alt=""/></figure>
                             <div class="content">
-                                <h2>Jhon D’duza</h2>
+                                <h2><?php echo $row->nama_wanita; ?></h2>
                                 <div class="con">
                                     <ul>
 
@@ -204,30 +226,36 @@
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                     <div class="text-con">
-                                        <span>( S/o Mrs Fariza & Mr. Jany )</span>
-                                     <p>Aenean sollicitudin, lorem quis bibe nisi elit consequat ipsum, the part of mine anec sagittis sem nibh id elit.</p>
+                                        <span><?php echo "Putri ".$row->nama_ayah_wanita . " & " .$row->nama_ibu_wanita  ?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php 
+                    
+                    foreach ($acara->getResult() as $row){ 
+                        $tanggal_akad =  $row->tanggal_akad;
+                        $tanggal_resepsi =  $row->tanggal_resepsi;
+                    ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="about-con">
                             <h1>Invitation</h1>
                             <div class="con">
-                                <h2>Monday</h2>
-                                <span>24 january 2018</span>
-                                <p class="midd">At St. Thomas's Church,<br>London, U.K.</p>
-                                <p>We inviting you and<br>your family on</p>
-                                <a href="#" class="btn1">rspv</a>
+                                <span><?php echo $row->tanggal_resepsi; ?></span>
+                                <p class="midd"><?php echo $row->tempat_resepsi; ?></p>
+                                <p><?php echo $row->alamat_resepsi; ?></p>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php foreach ($mempelai->getResult() as $row){  ?>
                     <div class="col-md-4 col-sm-12">
                         <div class="person rigth">
-                            <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/about/2.jpg" alt=""/></figure>
+                            <figure><img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/bride.png" alt=""/></figure>
                             <div class="content">
-                                <h2>Jhon D’duza</h2>
+                                <h2><?php echo $row->nama_pria; ?></h2>
                                 <div class="con">
                                     <ul>
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -235,13 +263,13 @@
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                     <div class="text-con">
-                                        <span>( S/o Mrs Fariza & Mr. Jany )</span>
-                                        <p>Aenean sollicitudin, lorem quis bibe nisi elit consequat ipsum, the part of mine anec sagittis sem nibh id elit.</p>
+                                        <span><?php echo "Putra ".$row->nama_ayah_pria . " & " .$row->nama_ibu_pria  ?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </section>
@@ -260,7 +288,7 @@
 
                             <h2>Dont’s miss it</h2>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor incididunt ut bore et dolore magna aliqua.</p>
+                            <p></p>
 
                         </div>
 
@@ -296,254 +324,7 @@
 
         <!--Family area start here-->
 
-        <section class="family_area_2 section bg-img jarallax af">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="section-heading">
-
-                            <p>most imp. persons</p>
-
-                            <h2>Lovable Family</h2>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="family-tabbox">
-
-                            <!-- Nav tabs -->
-
-                            <ul class="nav nav-tabs" role="tablist">
-
-                                <li role="presentation" class="active"><a href="#groom" aria-controls="groom" role="tab" data-toggle="tab"><img src="assets/images/family/sm-1.jpg" alt="Groom"></a></li>
-
-                                <li role="presentation"><a href="#bride" aria-controls="bride" role="tab" data-toggle="tab"><img src="assets/images/family/sm-2.jpg" alt="Bride"></a></li>
-
-                            </ul>
-
-                            <!-- Tab panes -->
-
-                            <div class="tab-content">
-
-                                <div role="tabpanel" class="tab-pane fade in active" id="groom">
-
-                                    <div class="familyslider">
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Abilash D’suza</h2>
-
-                                                    <p>(Johan’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/2.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/3.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/4.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div role="tabpanel" class="tab-pane fade" id="bride">
-
-                                    <div class="familyslider">
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/2.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/3.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/4.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item">
-
-                                            <div class="familyinfo">
-
-                                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/family/1.jpg" alt=""/></figure>
-
-                                                <div class="content">
-
-                                                    <h2>Mr. Husbain malik</h2>
-
-                                                    <p>(Hussain’s Father)</p>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
+     
         <!--Family area end here-->
 
         <!--Love story area start here-->
@@ -614,26 +395,6 @@
 
                             </div>
 
-                            <div class="story">
-
-                                <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/story/1.jpg" alt=""/></figure>
-
-                                <div class="date"><strong>27</strong><span>june</span></div>
-
-                                <div class="content">
-
-                                    <h2>Our First Met</h2>
-
-                                    <h4>That day changed Life</h4>
-
-                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sag.</p>
-
-                                </div>
-
-                                <span class="dot"></span>
-
-                            </div>
-
                         </div>
 
                     </div>
@@ -641,7 +402,7 @@
                     <div class="col-md-6 col-sm-12">
 
                         <div class="story-right">
-
+                        
                             <div class="story">
 
                                 <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/story/2.jpg" alt=""/></figure>
@@ -721,22 +482,27 @@
                     <div class="col-md-12 col-sm-12 pd-0">
 
                         <div class="event-slider">
-
+                        <?php 
+	
+                            foreach ($acara->getResult() as $row){ 
+                                $tanggal_akad =  $row->tanggal_akad;
+                                $tanggal_resepsi =  $row->tanggal_resepsi;
+                            ?>
                             <div class="col-sm-12">
 
                                 <div class="event-list">
 
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/1.jpg" alt=""/></figure>
+                                    <!-- <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/1.jpg" alt=""/></figure> -->
 
-                                    <div class="date"><strong>27</strong><span>june</span></div>
+                                    <div class="date"><strong><?php echo $row->tanggal_akad; ?></strong></div>
 
                                     <div class="content">
 
-                                        <h2>Main Ceremony</h2>
+                                        <h2>Akad Nikah</h2>
 
-                                        <h4> 10:00 AM to 12:00 PM</h4>
+                                        <h4><?php echo $row->jam_akad; ?></h4>
 
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
+                                        <p><?php echo $row->tempat_akad; ?>,<br><?php echo $row->alamat_akad; ?></p>
 
                                     </div>
 
@@ -750,131 +516,22 @@
 
                                     <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/2.jpg" alt=""/></figure>
 
-                                    <div class="date"><strong>27</strong><span>june</span></div>
+                                    <div class="date"><strong><?php echo $row->tanggal_resepsi; ?></strong></div>
 
                                     <div class="content">
 
-                                        <h2>Main Ceremony</h2>
+                                        <h2>Resepsi Nikah</h2>
 
-                                        <h4> 10:00 AM to 12:00 PM</h4>
+                                        <h4><?php echo $row->jam_resepsi; ?></h4>
 
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
+                                        <p><?php echo $row->tempat_resepsi; ?>,<br><?php echo $row->alamat_resepsi; ?></p>
 
                                     </div>
 
                                 </div>
 
                             </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="event-list">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/3.jpg" alt=""/></figure>
-
-                                    <div class="date"><strong>27</strong><span>june</span></div>
-
-                                    <div class="content">
-
-                                        <h2>Main Ceremony</h2>
-
-                                        <h4> 10:00 AM to 12:00 PM</h4>
-
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="event-list">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/4.jpg" alt=""/></figure>
-
-                                    <div class="date"><strong>27</strong><span>june</span></div>
-
-                                    <div class="content">
-
-                                        <h2>Main Ceremony</h2>
-
-                                        <h4> 10:00 AM to 12:00 PM</h4>
-
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="event-list">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/5.jpg" alt=""/></figure>
-
-                                    <div class="date"><strong>27</strong><span>june</span></div>
-
-                                    <div class="content">
-
-                                        <h2>Main Ceremony</h2>
-
-                                        <h4> 10:00 AM to 12:00 PM</h4>
-
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="event-list">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/6.jpg" alt=""/></figure>
-
-                                    <div class="date"><strong>27</strong><span>june</span></div>
-
-                                    <div class="content">
-
-                                        <h2>Main Ceremony</h2>
-
-                                        <h4> 10:00 AM to 12:00 PM</h4>
-
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-12">
-
-                                <div class="event-list">
-
-                                    <figure><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/event/7.jpg" alt=""/></figure>
-
-                                    <div class="date"><strong>27</strong><span>june</span></div>
-
-                                    <div class="content">
-
-                                        <h2>Main Ceremony</h2>
-
-                                        <h4> 10:00 AM to 12:00 PM</h4>
-
-                                        <p>3355, Wayside Lane, Oakland,<br>CA 94601 </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <?PHP } ?>
 
                         </div>
 
@@ -900,7 +557,7 @@
 
                         <div id="map_wrapper">
 
-                            <div id="map_canvas" style="width:100%; height:650px;"></div>
+                              <?= $maps ?>
 
                         </div>
 
@@ -916,106 +573,7 @@
 
         <!--gallery area start here-->
 
-        <section section-scroll='4' class="gallery_area_2 section">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-
-                        <div class="section-heading">
-
-                            <p>ARE GETTING MARRIED!</p>
-
-                            <h2>memorable photo gallery</h2>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-
-                        <div class="gallery">
-                            <div class="col-md-4 col-sm-12 pd-0">
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/1.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/1.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/3.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/3.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/9.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/9.jpg" alt=""/></a></figure>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-12 pd-0">
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/7.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/7.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/2.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/2.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/8.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/8.jpg" alt=""/></a></figure>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-12 pd-0">
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/4.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/4.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/5.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/5.jpg" alt=""/></a></figure>
-
-                                </div>
-
-                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0">
-
-                                    <figure><a href="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/gallery/6.jpg"><span><i class="fas fa-search"></i></span><img src="assets/images/gallery/6.jpg" alt=""/></a></figure>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 text-center">
-
-                        <a href="#" class="btn1 mr-t60">Load More</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
+      
         <!--gallery area End here-->
         <!--Blog area start here-->
         <!-- <section section-scroll='5' class="blog_area_2 section bg-img jarallax af">
@@ -1281,46 +839,6 @@
         <!--Guest area end here-->
 
         <!--Registry area start here-->
-        <section class="registry_area_2 section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="sec-heding">
-                         <h3>Gift Registry</h3>
-                          <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10 col-sm-12 col-md-offset-1">
-                        <div class="registry_slider">
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/1.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/2.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/3.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/1.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/2.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/1.jpg" alt=""/></a>
-                            </div>
-                            <div class="registry-list">
-                                <a href="#"><img src="<?php echo base_url() ?>/assets/themes/02_fall_wedding/assets/images/brand/3.jpg" alt=""/></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--Registry area end here-->
 
         <!--Rspv area start here-->
@@ -1392,7 +910,8 @@
                         <div class="info-list">
                             <div class="ico"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="content">
-                                <h4>110, B Kalani Bagh, Dewas<br>M.P. INDIA #455001</h4>
+                                <h2>Home</h2>
+                                <p>Jakarta</p>
                             </div>
                         </div>
 
@@ -1401,7 +920,8 @@
                         <div class="info-list">
                             <div class="ico"><i class="fas fa-phone" ></i></div>
                             <div class="content">
-                                <h4>+1800-123-4578<br>+91 7851-1245-12</h4>
+                                <h2>Phone</h2>
+                                <p>0878-8700-5722</p>
                             </div>
                         </div>
                     </div>
@@ -1410,7 +930,8 @@
                         <div class="info-list">
                             <div class="ico"><i class="fas fa-envelope"></i></div>
                             <div class="content">
-                                <h4>weddingshoot@example.com<br>wedding@example.com</h4>
+                                <h2>Email Us</h2>
+                                <p>halomomenbahagia@gmail.com</p>
                             </div>
                         </div>
                     </div>
