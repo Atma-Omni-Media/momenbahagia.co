@@ -179,7 +179,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="persons">
                             <figure>
-                                <img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/about/1.jpg" alt=""/>
+                                <img src="<?php echo base_url() ?>/assets/themes/01_spring_wedding/assets/images/about/1.jpg" alt=""/>
                                 <h2>The Groom</h2>
                             </figure>
                             <div class="content">
