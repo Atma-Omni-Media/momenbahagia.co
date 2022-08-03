@@ -3,7 +3,13 @@
 <html class="no-js" lang="en">
 
     <head>
-    <?php foreach ($mempelai->getResult() as $row){ ?>
+    <?php foreach ($mempelai->getResult() as $row){ 
+         $kunci = $row->kunci;
+         $youtube = $row->video;
+         $salam_pembuka = $row->salam_pembuka;
+         $musiknya = "/assets/users/".$kunci."/musik.mp3";
+         $maps = $row->maps;
+        ?>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,14 +51,7 @@
         <![endif]-->
 
     </head>
-    <?php foreach ($data->getResult() as $row){
-        $kunci = $row->kunci;
-		$youtube = $row->video;
-		$salam_pembuka = $row->salam_pembuka;
-		$musiknya = "/assets/users/".$kunci."/musik.mp3";
-		$maps = $row->maps;
-    }
-	?>
+    
     <body>
 
        <!-- preloader Start -->

@@ -1,15 +1,26 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+    <?php foreach ($mempelai->getResult() as $row){ ?>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <!--Theme Title-->
-        <title>Wedding Responsive HTML Template</title>
-        <meta name="description" content="">
-
-        <!-- Place favicon.ico in the root directory -->
+        <title><?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?></title>
+        <meta name="description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:title" content="<?php echo $row->nama_panggilan_pria." & ".$row->nama_panggilan_wanita; ?>">
+        <meta property="og:description" content="<?php
+        echo 'Hello ' . $invite . '! Kamu Di Undang..';
+        ?>">
+        <meta property="og:url" content="<?php echo base_url() ?>">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="og:type" content="website" />
+        <?php }?>
+    <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
         <link rel="apple-touch-icon" href="favicon.png">
         
@@ -35,6 +46,7 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    
     <body>
        <!-- preloader Start -->
 		<div id="preloader">
@@ -52,7 +64,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="logo-area">
                             <div class="content">
-                                <h2>Jenny <span>&</span> Mark</h2>
+                                <h2><?php echo $row->nama_panggilan_pria ?> & <?php echo $row->nama_panggilan_wanita ?></h2>
                                 <p>ARE GETTING MARRIED!</p>
                             </div>
                         </div>
@@ -110,22 +122,16 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="slider_home">
                             <div class="slider-list one af">
+                                <?php 
+                                    foreach ($acara->getResult() as $row){ 
+                                        $tanggal_akad =  $row->tanggal_akad;
+                                        $tanggal_resepsi =  $row->tanggal_resepsi;
+                                    ?>
                                 <div class="content">
                                     <h2 class="wow animated fadeInDown" data-wow-duration="1.8s">Save The Date</h2>
-                                    <h3 class="wow animated fadeInDown" data-wow-duration="1.5s">29 Jan 2018</h3>
+                                    <h3 class="wow animated fadeInDown" data-wow-duration="1.5s"><?php echo $row->tanggal_resepsi ?></h3>
                                 </div>
-                            </div>
-                            <div class="slider-list two af">
-                                <div class="content">
-                                    <h2 class="wow animated fadeInDown" data-wow-duration="1.8s">Save The Date</h2>
-                                    <h3 class="wow animated fadeInDown" data-wow-duration="1.5s">29 Jan 2018</h3>
-                                </div>
-                            </div>
-                            <div class="slider-list three af">
-                                <div class="content">
-                                    <h2 class="wow animated fadeInDown" data-wow-duration="1.8s">Save The Date</h2>
-                                    <h3 class="wow animated fadeInDown" data-wow-duration="1.5s">29 Jan 2018</h3>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -175,16 +181,17 @@
         <!--Persons area start here-->
         <section section-scroll='1' class="persons-area bg-img jarallax af section4">
             <div class="container">
+            <?php foreach ($mempelai->getResult() as $row){  ?>
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <div class="persons">
                             <figure>
                                 <img src="<?php echo base_url() ?>/assets/themes/01_spring_wedding/assets/images/about/1.jpg" alt=""/>
-                                <h2>The Groom</h2>
+                                <h2>Mempelai Pria</h2>
                             </figure>
                             <div class="content">
-                                <h3>Mark Wills</h3>
-                                <p>(S/o Mrs. Jeniffer & Mr. Clark Wills)</p>
+                                <h3><?php echo $row->nama_wanita ?></h3>
+                                <p>(<?php echo "Putri ".$row->nama_ayah_wanita . " & " .$row->nama_ibu_wanita  ?>)</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -196,12 +203,12 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="persons">
                             <figure>
-                                <img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/about/2.jpg" alt=""/>
-                                <h2>The Groom</h2>
+                                <img src="<?= base_url() ?>/assets/users/<?= $row->key_image; ?>/bride.png" alt=""/>
+                                <h2>Mempelai Pria</h2>
                             </figure>
                             <div class="content">
-                                <h3>Mark Wills</h3>
-                                <p>(S/o Mrs. Jeniffer & Mr. Clark Wills)</p>
+                                <h3><?php echo $row->nama_pria ?></h3>
+                                <p>(<?php echo "Putri ".$row->nama_ayah_pria . " & " .$row->nama_ibu_pria  ?>)</p>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -212,6 +219,7 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
         </section>
         <!--Persons area end here-->
         <!--Event area start here-->
@@ -229,29 +237,36 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-sm-12 col-md-offset-2 pd-0">
+                    <?php 
+                    
+                    foreach ($acara->getResult() as $row){ 
+                        $tanggal_akad =  $row->tanggal_akad;
+                        $tanggal_resepsi =  $row->tanggal_resepsi;
+                    ?>
                         <div class="col-md-6 col-sm-12">
                             <div class="event-list">
-                                <div class="time">7:30 PM</div>
+                                <div class="time"><?php echo $row->jam_akad; ?></div>
                                 <div class="content">
                                     <h2>Main Ceremony</h2>
-                                    <h3>29 Jan 2018</h3>
-                                    <span>St. Thomas's <br>Church, London, U.K.</span>
-                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor .</p>
+                                    <h3><?php echo $row->tanggal_akad; ?></h3>
+                                    <span><?php echo $row->tempat_akad; ?></span>
+                                    <p><?php echo $row->alamat_akad; ?></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="event-list">
-                                <div class="time">9:30 PM</div>
+                                <div class="time"><?php echo $row->jam_resepsi; ?></div>
                                 <div class="content">
                                     <h2>Wedding Party</h2>
-                                    <h3>29 Jan 2018</h3>
-                                    <span>St. Thomas's <br>Church, London, U.K.</span>
-                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor .</p>
+                                    <h3><?php echo $row->tanggal_resepsi; ?></h3>
+                                    <span><?php echo $row->tempat_resepsi; ?></span>
+                                    <p><?php echo $row->alamat_akad; ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </section>
@@ -613,44 +628,6 @@
         </section>
         <!--Rspv area End here-->
         <!--Registry area start here-->
-        <section class="registry-area section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="section-heading">
-                            <h2>Gift Registry</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10 col-sm-12 col-md-offset-1">
-                        <div class="registry_slider">
-                            <div class="col-sm-12">
-                                <div class="registry-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/brand/1.jpg" alt=""/></a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">   
-                                <div class="registry-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/brand/3.jpg" alt=""/></a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="registry-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/brand/2.jpg" alt=""/></a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="registry-list">
-                                    <a href="#"><img src="<?php echo base_url() ?>/assets/themes/04_spring_wedding/assets/images/brand/3.jpg" alt=""/></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!--Registry area end here-->
         <!--Blog area start here-->
         <section section-scroll='7' class="blog-area section">
