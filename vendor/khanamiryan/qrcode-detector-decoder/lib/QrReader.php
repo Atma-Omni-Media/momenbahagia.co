@@ -62,7 +62,7 @@ final class QrReader
             $height = $im->getImageHeight();
             $source = new IMagickLuminanceSource($im, $width, $height);
         } else {
-            if (!is_resource($im)) {
+            if (!is_resource($im) && !is_object($im)) {
                 throw new \InvalidArgumentException('Invalid image source.');
             }
             $width  = imagesx($im);
@@ -91,7 +91,7 @@ final class QrReader
     {
         $this->decode();
 
-        if (method_exists($this->result, 'toString')) {
+        if ($this->result !== false && method_exists($this->result, 'toString')) {
             return $this->result->toString();
         }
 
