@@ -126,13 +126,13 @@
 		<img src="<?php echo base_url() ?>/assets/base/img/bismillah.png" class="mempelai-salam-pembuka"/><br>
         <p class="mempelai-intermezzo" ><?= $salam_pembuka ?></p>
 
-        <img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/groom.png" class="mempelai-img" />
+        <img src="<?= base_url() ?>/assets/users/<?= $key->key_image; ?>/groom.png" class="mempelai-img" />
 
         <h1 class="mempelai-pria-nama"><?php echo $row->nama_pria; ?></h1>
         <p class="mempelai-pria-ortu"><?php echo "Putra ".$row->nama_ayah_pria . " dan " .$row->nama_ibu_pria  ?></p> 
         <h1 class="dengan">dengan</h1>
 
-        <img src="<?= base_url() ?>/assets/users/<?= $kunci; ?>/bride.png" class="mempelai-img"/>
+        <img src="<?= base_url() ?>/assets/users/<?= $key->key_image; ?>/bride.png" class="mempelai-img"/>
 
         <h1 class="mempelai-wanita-nama"><?php echo $row->nama_wanita; ?></h1>
         <p class="mempelai-wanita-ortu"><?php echo "Putri ".$row->nama_ayah_wanita . " dan " .$row->nama_ibu_wanita  ?></p>
@@ -244,8 +244,8 @@
 							<?php  foreach($album as $key => $data) {  ?>
 
 								<div class="grid">
-									<a href="<?php echo base_url() ?>/assets/users/<?php echo $kunci.'/'.$data['album'] ?>.png" class="fancybox" data-fancybox-group="gall-1">
-										<img src="<?php echo base_url() ?>/assets/users/<?php echo $kunci.'/'.$data['album']; ?>.png" alt>
+									<a href="<?php echo base_url() ?>/assets/users/<?php echo $key->key_image.'/'.$data['album'] ?>.png" class="fancybox" data-fancybox-group="gall-1">
+										<img src="<?php echo base_url() ?>/assets/users/<?php echo $key->key_image.'/'.$data['album']; ?>.png" alt>
 									</a>
 								</div>
 
